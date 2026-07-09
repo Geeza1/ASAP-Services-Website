@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --asap-purple: #2905a1;
+  --asap-red: #ed2e38;
+  --asap-cyan: #00a6d6;
+  --asap-ink: #050b16;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--asap-cyan);
+  outline-offset: 4px;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(0, 166, 214, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 166, 214, 0.15) 1px, transparent 1px);
+  background-size: 78px 78px;
+  mask-image: linear-gradient(to top, black, transparent 82%);
+}
+
+.electric-frame {
+  position: relative;
+}
+
+.electric-frame::before,
+.electric-frame::after {
+  border: 1px solid rgba(0, 166, 214, 0.38);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.electric-frame::before {
+  transform: translate(10px, 10px);
+}
+
+.electric-frame::after {
+  transform: translate(-10px, -10px);
+}
