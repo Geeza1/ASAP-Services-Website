@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.8 - 2026-07-11
+
+- Replaced the text-only header mark with a local ASAP Auto Electrics logo asset based on the shared brand folder colours and style.
+
+## v1.7 - 2026-07-11
+
+- Updated all homepage phone display and click-to-call links to `03 9870 2722`.
+
+## v1.6 - 2026-07-11
+
+- Restored the generated light workshop homepage image and updated the hero to use it instead of the SVG placeholder.
+
 ## v1.5 - 2026-07-09
 
 - Prepared the project for GitHub by expanding `.gitignore` for Next.js, Vercel, local environment files, caches, coverage and test outputs.

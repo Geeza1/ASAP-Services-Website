@@ -13,7 +13,7 @@ import {
   Zap
 } from "lucide-react";
 
-const primaryPhone = "03 9870 0000";
+const primaryPhone = "03 9870 2722";
 
 const problemList = [
   "Battery Light On",
@@ -44,16 +44,16 @@ const services = [
     icon: BatteryCharging
   },
   {
-    title: "Accessories & Touring",
+    title: "Accessories & Towing",
     description:
-      "Brake controllers, trailer wiring, Anderson plugs, lightbars and driving lights fitted neatly and safely.",
+      "Brake controllers, trailer wiring, Anderson plugs, lightbars and driving lights fitted correctly and safely.",
     icon: Wrench
   },
   {
-    title: "Windows & Air Conditioning",
+    title: "Electric Windows",
     description:
-      "Electric window faults and car air conditioning repairs handled by experienced auto electrical technicians.",
-    icon: Snowflake
+      "Electric window faults, window switches, window regulators and window motors repairs handled by experienced auto electrical technicians.",
+    icon: Zap
   }
 ];
 
@@ -73,29 +73,53 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/94 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <a href="#" className="shrink-0 font-display text-xl font-black uppercase tracking-normal sm:text-2xl">
-            <span className="text-asap-red">ASAP</span>
-            <span className="text-asap-cyan">AUTO</span>
-            <span className="text-asap-purple">ELECTRICS</span>
-          </a>
-          <nav aria-label="Main navigation" className="hidden items-center gap-7 text-sm font-bold text-slate-600 md:flex">
-            <a href="#services" className="transition hover:text-asap-purple">Services</a>
-            <a href="#areas" className="transition hover:text-asap-purple">Areas</a>
-            <a href="#reviews" className="transition hover:text-asap-purple">Reviews</a>
-            <a href="#about" className="transition hover:text-asap-purple">About</a>
-            <a href="#contact" className="transition hover:text-asap-purple">Contact</a>
-          </nav>
-          <a
-            href="tel:0398700000"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-asap-purple px-4 text-sm font-black text-white shadow-sm transition hover:bg-asap-cyan hover:text-slate-950 md:px-6"
-            aria-label={`Call ASAP Auto Electrics on ${primaryPhone}`}
-          >
-            <Phone aria-hidden size={18} />
-            <span className="hidden sm:inline">Call Now</span>
-          </a>
-        </div>
-      </header>
+  <div className="mx-auto flex min-h-[84px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <a
+      href="#"
+      className="relative block h-10 w-[220px] shrink-0 sm:h-12 sm:w-[340px] lg:w-[410px]"
+      aria-label="ASAP Auto Electrics home"
+    >
+      <Image
+        src="/reference/logos/asap-logo-header-blue.png"
+        alt="ASAP Auto Electrics"
+        fill
+        priority
+        sizes="(max-width: 639px) 220px, (max-width: 1023px) 340px, 410px"
+        className="object-contain object-left"
+      />
+    </a>
+
+    <nav
+      aria-label="Main navigation"
+      className="hidden items-center gap-9 text-[15px] font-bold text-slate-600 md:flex lg:gap-10 lg:text-base"
+    >
+      <a href="#services" className="transition hover:text-asap-purple">
+        Services
+      </a>
+      <a href="#areas" className="transition hover:text-asap-purple">
+        Areas
+      </a>
+      <a href="#reviews" className="transition hover:text-asap-purple">
+        Reviews
+      </a>
+      <a href="#about" className="transition hover:text-asap-purple">
+        About
+      </a>
+      <a href="#contact" className="transition hover:text-asap-purple">
+        Contact
+      </a>
+    </nav>
+
+    <a
+      href="tel:0398702722"
+      className="inline-flex h-[46px] shrink-0 items-center gap-2 rounded-full bg-asap-purple px-4 text-sm font-black text-white shadow-sm transition hover:bg-asap-cyan hover:text-slate-950 md:px-6"
+      aria-label={`Call ASAP Auto Electrics on ${primaryPhone}`}
+    >
+      <Phone aria-hidden size={18} />
+      <span className="hidden sm:inline">Call Now</span>
+    </a>
+  </div>
+</header>
 
       <section className="relative overflow-hidden bg-slate-50">
         <div className="absolute inset-x-0 top-0 h-2 bg-[linear-gradient(90deg,#ED2E38,#00A6D6,#2905A1)]" />
@@ -107,7 +131,7 @@ export default function Home() {
             </p>
             <h1 className="mt-6 max-w-3xl font-display text-5xl font-black leading-[0.96] tracking-normal text-slate-950 sm:text-6xl lg:text-7xl">
               Auto Electric Problems?
-              <span className="block text-asap-purple">Fast, Expert Service &amp; Repair</span>
+              <span className="block text-asap-purple">Get the Fault Diagnosed Properly</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
               Professional auto electrical diagnostics, repairs and installations from ASAP Auto Electrics in Ringwood, servicing Melbourne&apos;s Eastern Suburbs.
@@ -117,7 +141,7 @@ export default function Home() {
                 <CalendarCheck aria-hidden size={20} />
                 Book Electrical Diagnosis
               </a>
-              <a href="tel:0398700000" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white">
+              <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white">
                 <Phone aria-hidden size={20} />
                 {primaryPhone}
               </a>
@@ -137,7 +161,7 @@ export default function Home() {
             <div className="absolute -bottom-4 -left-4 h-36 w-36 rounded-full bg-asap-purple/10" />
             <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl">
               <Image
-                src="/images/light-workshop-placeholder.svg"
+                src="/reference/images/light-workshop-placeholder.png"
                 alt="Placeholder workshop image for ASAP Auto Electrics diagnostics and repairs"
                 width={1200}
                 height={760}
@@ -146,9 +170,9 @@ export default function Home() {
               />
               <div className="grid gap-3 p-5 sm:grid-cols-3">
                 {[
-                  ["Ringwood", "Workshop based"],
-                  ["Call", "Fast advice"],
-                  ["Book", "Clear next step"]
+                  ["Ringwood", "Workshop Based"],
+                  ["Established", "Local Business"],
+                  ["Guaranteed", "Professional Diagnosis"]
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-md border border-slate-200 bg-slate-50 p-4">
                     <p className="text-2xl font-black text-asap-purple">{label}</p>
@@ -226,8 +250,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
           {[
             [ShieldCheck, "Experienced diagnosis", "We focus on finding the real electrical fault, not guessing and replacing parts."],
-            [Car, "Workshop equipped", "Customers bring vehicles to our Ringwood workshop for professional testing and repair."],
-            [Wrench, "Service focused", "This website is built for workshop bookings and enquiries, with ecommerce kept separate."]
+            [Wrench, "Workshop equipped", "This workshop is equipped with the latest tools and equipment for auto electrical faults." ],
+            [Car,  "Service focused","Customers bring vehicles to our Ringwood workshop for accessory fitting. and repair."]
           ].map(([Icon, title, copy]) => {
             const TypedIcon = Icon as typeof ShieldCheck;
             return (
@@ -250,7 +274,7 @@ export default function Home() {
               Tell us what is happening with the vehicle and we will guide you toward the right workshop booking.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href="tel:0398700000" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple px-6 font-black text-white">
+              <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple px-6 font-black text-white">
                 <Phone aria-hidden size={20} />
                 Call {primaryPhone}
               </a>
@@ -284,7 +308,7 @@ export default function Home() {
       </section>
 
       <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 border-t border-slate-200 bg-white/96 p-3 shadow-[0_-8px_28px_rgba(15,23,42,0.12)] backdrop-blur md:hidden">
-        <a href="tel:0398700000" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple font-black text-white">
+        <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple font-black text-white">
           <Phone aria-hidden size={18} />
           Call Now
         </a>
