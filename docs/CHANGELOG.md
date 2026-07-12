@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.10 - 2026-07-12
+
+- Added email address and optional vehicle registration fields to the reusable contact form.
+- Updated contact form validation on the client and server, including email format validation.
+- Updated the contact API to send a customer acknowledgement email after the workshop notification succeeds.
+- Updated contact-form documentation for the expanded fields and email delivery flow.
+
+## v1.9 - 2026-07-12
+
+- Added a reusable production contact form component for the homepage and future service pages.
+- Added a Next.js contact API route using server-side validation, lightweight spam protection and SMTP email delivery via Nodemailer.
+- Added `.env.example` with the required SMTP and email recipient environment variables.
+- Recorded the reusable contact-form architecture in the project documentation.
+
 ## v1.8 - 2026-07-11
 
 - Replaced the text-only header mark with a local ASAP Auto Electrics logo asset based on the shared brand folder colours and style.

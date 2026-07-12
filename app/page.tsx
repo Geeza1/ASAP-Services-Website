@@ -7,11 +7,11 @@ import {
   MapPin,
   Phone,
   ShieldCheck,
-  Snowflake,
-  Star,
   Wrench,
   Zap
 } from "lucide-react";
+import { GoogleReviews } from "../components/home/GoogleReviews";
+import { ContactForm } from "../components/forms/ContactForm";
 
 const primaryPhone = "03 9870 2722";
 
@@ -232,19 +232,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="reviews" className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl text-center">
-          <div className="flex justify-center gap-1 text-asap-cyan" aria-label="Five star review placeholder">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <Star key={star} aria-hidden fill="currentColor" size={25} />
-            ))}
-          </div>
-          <h2 className="mt-4 text-4xl font-black text-slate-950">Trusted local auto electrical repairs</h2>
-          <p className="mx-auto mt-5 max-w-3xl leading-8 text-slate-700">
-            Review blocks will be connected to real Google review proof later. For now, this section holds the trust position near the booking journey where it helps conversion.
-          </p>
-        </div>
-      </section>
+      <GoogleReviews />
 
       <section id="about" className="bg-asap-purple px-4 py-16 text-white sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
@@ -278,32 +266,19 @@ export default function Home() {
                 <Phone aria-hidden size={20} />
                 Call {primaryPhone}
               </a>
-              <a href="mailto:bookings@asapauto.com.au" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple">
+              <a
+                href="https://calendly.com/asapautoelectrics/auto-electrical-repair"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Book an auto electrical repair with ASAP Auto Electrics"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple"
+              >
                 <CalendarCheck aria-hidden size={20} />
-                Request Quote
+                Book Online
               </a>
             </div>
           </div>
-          <form className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm" aria-label="Workshop booking placeholder form">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="grid gap-2 text-sm font-black">
-                Name
-                <input className="min-h-12 rounded-md border border-slate-300 bg-white px-3 text-base font-normal text-slate-950" placeholder="Your name" />
-              </label>
-              <label className="grid gap-2 text-sm font-black">
-                Phone
-                <input className="min-h-12 rounded-md border border-slate-300 bg-white px-3 text-base font-normal text-slate-950" placeholder="04xx xxx xxx" />
-              </label>
-            </div>
-            <label className="mt-4 grid gap-2 text-sm font-black">
-              Vehicle or issue
-              <textarea className="min-h-28 rounded-md border border-slate-300 bg-white px-3 py-3 text-base font-normal text-slate-950" placeholder="Battery light on, vehicle will not start, alternator problem..." />
-            </label>
-            <button type="button" className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-asap-cyan px-6 font-black text-slate-950">
-              <CalendarCheck aria-hidden size={20} />
-              Book Electrical Diagnosis
-            </button>
-          </form>
+          <ContactForm sourcePage="Homepage contact section" serviceName="Auto electrical enquiry" />
         </div>
       </section>
 

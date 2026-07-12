@@ -37,3 +37,13 @@ One landing page per service.
 Reason
 
 Higher relevance.
+
+-----------------------
+
+Decision
+
+Reusable contact form system.
+
+Reason
+
+Homepage and future service pages should share one validated enquiry form, one API route, one workshop notification path via EMAIL_TO, and one customer acknowledgement flow.
