@@ -4,6 +4,11 @@ export type ServiceRoute = {
   homepageCardTitle?: string;
 };
 
+export type FooterServiceLink = {
+  title: string;
+  slug: ServiceRoute["slug"];
+};
+
 export const serviceRoutes = [
   {
     slug: "auto-electrical-diagnostics",
@@ -62,3 +67,42 @@ export function getServiceRouteByHomepageCardTitle(cardTitle: string) {
 export function getServicePath(slug: string) {
   return `/services/${slug}`;
 }
+
+export const footerServiceLinks = [
+  {
+    title: "Alternator & Starter Repairs",
+    slug: "alternator-repairs"
+  },
+  {
+    title: "Anderson Plugs",
+    slug: "anderson-plugs"
+  },
+  {
+    title: "Auto Electrical Diagnostics",
+    slug: "auto-electrical-diagnostics"
+  },
+  {
+    title: "Battery & Charging",
+    slug: "battery-charging-system"
+  },
+  {
+    title: "Brake Controllers",
+    slug: "brake-controllers"
+  },
+  {
+    title: "Electric Window Repairs",
+    slug: "electric-window-repairs"
+  },
+  {
+    title: "General Auto Electrical Repairs",
+    slug: "auto-electrical-diagnostics"
+  },
+  {
+    title: "Lighting Repairs",
+    slug: "lighting-repairs"
+  },
+  {
+    title: "Trailer Wiring",
+    slug: "trailer-wiring"
+  }
+] satisfies FooterServiceLink[];

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { footerServiceLinks, getServicePath } from "../../lib/content/serviceRoutes";
+
 const contactEmail = "info@asapauto.com.au";
 const phoneDisplay = "03 9870 2722";
 const phoneHref = "tel:0398702722";
@@ -6,18 +9,6 @@ const encodedWorkshopAddress = encodeURIComponent(workshopAddress);
 const workshopDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedWorkshopAddress}`;
 const footerHeadingClass =
   "font-sans text-[18px] font-bold not-italic tracking-[0.04em] text-white";
-
-const footerServices = [
-  "Alternator & Starter Repairs",
-  "Anderson Plugs",
-  "Auto Electrical Diagnostics",
-  "Battery & Charging",
-  "Brake Controllers",
-  "Electric Window Repairs",
-  "General Auto Electrical Repairs",
-  "Lighting Repairs",
-  "Trailer Wiring"
-];
 
 export function SiteFooter() {
   return (
@@ -87,8 +78,15 @@ export function SiteFooter() {
           <div>
             <h2 className={footerHeadingClass}>Services</h2>
             <ul className="reading-text mt-6 grid gap-2 text-slate-200">
-              {footerServices.map((service) => (
-                <li key={service}>{service}</li>
+              {footerServiceLinks.map((service) => (
+                <li key={service.title}>
+                  <Link
+                    href={getServicePath(service.slug)}
+                    className="transition hover:text-asap-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asap-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-asap-purple"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
