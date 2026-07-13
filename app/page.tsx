@@ -56,6 +56,14 @@ const services = [
     icon: Zap
   }
 ];
+const workshopAddress = "Unit 3/3 Oban Rd, Ringwood VIC 3134";
+const encodedWorkshopAddress = encodeURIComponent(workshopAddress);
+
+const workshopMapUrl =
+  `https://www.google.com/maps?q=${encodedWorkshopAddress}&output=embed`;
+
+const workshopDirectionsUrl =
+  `https://www.google.com/maps/dir/?api=1&destination=${encodedWorkshopAddress}`;
 
 const suburbs = [
   "Ringwood",
@@ -213,25 +221,82 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="areas" className="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm md:grid-cols-[0.9fr_1.1fr] md:p-8">
-          <div>
-            <MapPin aria-hidden className="text-asap-red" size={34} />
-            <h2 className="mt-4 text-3xl font-black text-slate-950">Ringwood workshop, Eastern Suburbs service area</h2>
-            <p className="mt-5 leading-8 text-slate-700">
-              Our fully equipped workshop is located in Ringwood and proudly services customers from Melbourne&apos;s Eastern Suburbs.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {suburbs.map((suburb) => (
-              <a key={suburb} href="#contact" className="rounded-md border border-slate-200 bg-slate-50 px-4 py-4 font-black text-slate-800 transition hover:border-asap-cyan hover:bg-asap-cyan/10">
-                {suburb}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section
+  id="areas"
+  className="bg-slate-50 px-4 py-12 sm:px-6 lg:px-8 lg:py-14"
+>
+  <div className="mx-auto grid max-w-7xl gap-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch lg:p-8">
+    <div className="flex h-full flex-col">
+      <div>
+        <MapPin aria-hidden className="text-asap-red" size={32} />
 
+        <h2 className="mt-4 max-w-xl text-3xl font-black leading-tight tracking-normal text-slate-950">
+          Ringwood Workshop Serving Melbourne&apos;s Eastern Suburbs
+        </h2>
+
+        <p className="mt-4 max-w-2xl text-[17px] font-normal leading-8 tracking-[0.005em] text-slate-700">
+          Our fully equipped workshop is located in Ringwood. Customers bring
+          their vehicles to us from across Melbourne&apos;s eastern and
+          outer-eastern suburbs for professional auto electrical diagnosis,
+          repairs and installations.
+        </p>
+
+        <p className="mt-4 text-[15px] font-semibold leading-6 text-asap-purple">
+          Workshop service only — customers bring their vehicles to our
+          Ringwood workshop.
+        </p>
+      </div>
+
+      <div className="mt-6">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {suburbs.map((suburb) => (
+            <a
+              key={suburb}
+              href="#contact"
+              className="inline-flex min-h-9 items-center rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-800 transition hover:border-asap-cyan hover:bg-asap-cyan/10 sm:text-sm"
+            >
+              {suburb}
+            </a>
+          ))}
+        </div>
+
+        <p className="mt-4 text-sm font-semibold leading-6 text-slate-600">
+          We also welcome customers from surrounding eastern and outer-eastern
+          Melbourne suburbs.
+        </p>
+      </div>
+    </div>
+
+    <div className="flex h-full flex-col">
+      <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-100">
+        <iframe
+          src={workshopMapUrl}
+          title="Google Map showing the ASAP Auto Electrics Ringwood workshop location"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="h-[260px] w-full border-0 sm:h-[290px] lg:h-[310px]"
+          allowFullScreen
+        />
+      </div>
+
+      <div className="mt-4 rounded-md border border-slate-200 bg-slate-50 p-4">
+        <p className="text-sm font-semibold leading-6 text-slate-700">
+          Bring your vehicle to our Ringwood workshop at {workshopAddress}.
+        </p>
+
+        <a
+          href={workshopDirectionsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-asap-purple px-5 text-sm font-bold text-white transition hover:bg-asap-cyan hover:text-slate-950"
+        >
+          <MapPin aria-hidden size={18} />
+          Get Directions to Our Ringwood Workshop
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
       <GoogleReviews />
 
       <section id="about" className="bg-asap-purple px-4 py-16 text-white sm:px-6 lg:px-8">
