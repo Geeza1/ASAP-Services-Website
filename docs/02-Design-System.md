@@ -6,8 +6,17 @@ Primary: #2905a1
 Red accent: #ed2e38
 Blue accent: #00a6d6
 Headings: Calcite Pro style
-Body: Franklin Gothic / Myriad-style
+Navigation, buttons and UI labels: Franklin Gothic / Myriad-style
+Body copy and long-form reading: Inter
 Tone: confident, friendly, local, expert
+
+## Typography Utilities
+
+Use `.reading-text` for long-form body copy, descriptive paragraphs, service descriptions, FAQ answers, contact descriptions, footer text, list descriptions, form helper text and other reading content.
+
+`.reading-text` uses Inter and sets comfortable reading typography: approximately 16px text, 1.55 line-height, regular weight, normal letter spacing and slate-700 text colour.
+
+Do not use `.reading-text` for H1-H6 headings, hero headings, section headings, card headings, navigation, buttons, logos, labels or badges.
 
 Always follow these principles.
 

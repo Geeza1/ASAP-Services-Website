@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .reading-text {
+    color: #334155;
+    font-family: var(--font-reading), Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.55;
+  }
+}
+
 :root {
   color-scheme: light;
   --asap-purple: #2905a1;

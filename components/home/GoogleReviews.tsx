@@ -14,7 +14,7 @@ export function GoogleReviews() {
           <h2 id="google-reviews-heading" className="mt-4 text-4xl font-black text-slate-950">
             Trusted Local Auto Electrical Repairs
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl leading-8 text-slate-700">
+          <p className="reading-text mx-auto mt-5 max-w-3xl">
             Real reviews from customers who have visited our Ringwood workshop.
           </p>
         </div>
@@ -34,7 +34,7 @@ export function GoogleReviews() {
               </div>
 
               <blockquote className="mt-5 flex-1">
-                <p className="leading-8 text-slate-700">&ldquo;{review.reviewText}&rdquo;</p>
+                <p className="reading-text">&ldquo;{review.reviewText}&rdquo;</p>
               </blockquote>
 
               <footer className="mt-6 border-t border-slate-200 pt-4">

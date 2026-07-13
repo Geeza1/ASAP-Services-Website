@@ -141,7 +141,7 @@ export default function Home() {
               Auto Electric Problems?
               <span className="block text-asap-purple">Get the Fault Diagnosed Properly</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="reading-text mt-6 max-w-2xl">
               Professional auto electrical diagnostics, repairs and installations from ASAP Auto Electrics in Ringwood, servicing Melbourne&apos;s Eastern Suburbs.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -200,7 +200,7 @@ export default function Home() {
               <p className="text-sm font-black uppercase text-asap-red">Services</p>
               <h2 className="mt-3 text-4xl font-black tracking-normal text-slate-950">Auto electrical service that starts with proper diagnosis</h2>
             </div>
-            <p className="leading-8 text-slate-700">
+            <p className="reading-text">
               Whether the car will not start, a warning light is on, or accessories need fitting, the goal is simple: find the fault properly and give you a clear repair path.
             </p>
           </div>
@@ -213,7 +213,7 @@ export default function Home() {
                     <Icon aria-hidden size={26} />
                   </div>
                   <h3 className="mt-5 text-xl font-black">{service.title}</h3>
-                  <p className="mt-3 leading-7 text-slate-700">{service.description}</p>
+                  <p className="reading-text mt-3">{service.description}</p>
                 </article>
               );
             })}
@@ -234,7 +234,7 @@ export default function Home() {
           Ringwood Workshop Serving Melbourne&apos;s Eastern Suburbs
         </h2>
 
-        <p className="mt-4 max-w-2xl text-[17px] font-normal leading-8 tracking-[0.005em] text-slate-700">
+        <p className="reading-text mt-4 max-w-2xl">
           Our fully equipped workshop is located in Ringwood. Customers bring
           their vehicles to us from across Melbourne&apos;s eastern and
           outer-eastern suburbs for professional auto electrical diagnosis,
@@ -261,7 +261,7 @@ export default function Home() {
         </div>
 
         <p className="mt-4 text-sm font-semibold leading-6 text-slate-600">
-          We also welcome customers from surrounding eastern and outer-eastern
+          We also serve customers from surrounding eastern and outer-eastern
           Melbourne suburbs.
         </p>
       </div>
@@ -311,7 +311,7 @@ export default function Home() {
               <div key={title as string} className="rounded-lg border border-white/20 bg-white/10 p-6">
                 <TypedIcon aria-hidden size={30} className="text-asap-cyan" />
                 <h3 className="mt-4 text-xl font-black">{title as string}</h3>
-                <p className="mt-3 leading-7 text-white/80">{copy as string}</p>
+                <p className="reading-text mt-3 text-white/80">{copy as string}</p>
               </div>
             );
           })}
@@ -323,7 +323,7 @@ export default function Home() {
           <div>
             <p className="text-sm font-black uppercase text-asap-red">Contact</p>
             <h2 className="mt-3 text-4xl font-black text-slate-950">Book an auto electrical diagnosis</h2>
-            <p className="mt-5 leading-8 text-slate-700">
+            <p className="reading-text mt-5">
               Tell us what is happening with the vehicle and we will guide you toward the right workshop booking.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
