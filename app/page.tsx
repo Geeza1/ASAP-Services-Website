@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { GoogleReviews } from "../components/home/GoogleReviews";
 import { ContactForm } from "../components/forms/ContactForm";
+import { SiteFooter } from "../components/layout/SiteFooter";
 
 const primaryPhone = "03 9870 2722";
 
@@ -346,6 +347,8 @@ export default function Home() {
           <ContactForm sourcePage="Homepage contact section" serviceName="Auto electrical enquiry" />
         </div>
       </section>
+
+      <SiteFooter />
 
       <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 border-t border-slate-200 bg-white/96 p-3 shadow-[0_-8px_28px_rgba(15,23,42,0.12)] backdrop-blur md:hidden">
         <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple font-black text-white">
