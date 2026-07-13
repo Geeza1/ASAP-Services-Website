@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   BatteryCharging,
   CalendarCheck,
@@ -13,6 +14,8 @@ import {
 import { GoogleReviews } from "../components/home/GoogleReviews";
 import { ContactForm } from "../components/forms/ContactForm";
 import { SiteFooter } from "../components/layout/SiteFooter";
+import { SiteHeader } from "../components/layout/SiteHeader";
+import { getServicePath, getServiceRouteByHomepageCardTitle } from "../lib/content/serviceRoutes";
 
 const primaryPhone = "03 9870 2722";
 
@@ -81,54 +84,7 @@ const suburbs = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/94 backdrop-blur">
-  <div className="mx-auto flex min-h-[84px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-    <a
-      href="#"
-      className="relative block h-10 w-[220px] shrink-0 sm:h-12 sm:w-[340px] lg:w-[410px]"
-      aria-label="ASAP Auto Electrics home"
-    >
-      <Image
-        src="/reference/logos/asap-logo-header-blue.png"
-        alt="ASAP Auto Electrics"
-        fill
-        priority
-        sizes="(max-width: 639px) 220px, (max-width: 1023px) 340px, 410px"
-        className="object-contain object-left"
-      />
-    </a>
-
-    <nav
-      aria-label="Main navigation"
-      className="hidden items-center gap-9 text-[15px] font-bold text-slate-600 md:flex lg:gap-10 lg:text-base"
-    >
-      <a href="#services" className="transition hover:text-asap-purple">
-        Services
-      </a>
-      <a href="#areas" className="transition hover:text-asap-purple">
-        Areas
-      </a>
-      <a href="#reviews" className="transition hover:text-asap-purple">
-        Reviews
-      </a>
-      <a href="#about" className="transition hover:text-asap-purple">
-        About
-      </a>
-      <a href="#contact" className="transition hover:text-asap-purple">
-        Contact
-      </a>
-    </nav>
-
-    <a
-      href="tel:0398702722"
-      className="inline-flex h-[46px] shrink-0 items-center gap-2 rounded-full bg-asap-purple px-4 text-sm font-black text-white shadow-sm transition hover:bg-asap-cyan hover:text-slate-950 md:px-6"
-      aria-label={`Call ASAP Auto Electrics on ${primaryPhone}`}
-    >
-      <Phone aria-hidden size={18} />
-      <span className="hidden sm:inline">Call Now</span>
-    </a>
-  </div>
-</header>
+      <SiteHeader />
 
       <section className="relative overflow-hidden bg-slate-50">
         <div className="absolute inset-x-0 top-0 h-2 bg-[linear-gradient(90deg,#ED2E38,#00A6D6,#2905A1)]" />
@@ -208,14 +164,20 @@ export default function Home() {
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => {
               const Icon = service.icon;
+              const route = getServiceRouteByHomepageCardTitle(service.title);
+              const href = route ? getServicePath(route.slug) : "/#services";
               return (
-                <article key={service.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+                <Link
+                  key={service.title}
+                  href={href}
+                  className="block rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-asap-cyan/35"
+                >
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-asap-cyan/12 text-asap-purple">
                     <Icon aria-hidden size={26} />
                   </div>
                   <h3 className="mt-5 text-xl font-black">{service.title}</h3>
                   <p className="reading-text mt-3">{service.description}</p>
-                </article>
+                </Link>
               );
             })}
           </div>
