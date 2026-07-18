@@ -71,3 +71,15 @@ Standard service-page conversion hierarchy.
 Reason
 
 Related Services uses a subtle tinted background with white cards, while the final enquiry section uses one elevated white panel containing both booking options and the contact form. This creates clear section separation and a consistent conversion-focused finish across all service pages.
+
+-----------------------
+
+2026-07-18
+
+Decision
+
+Complete priority service content in the central model.
+
+Reason
+
+All ten approved service routes use unique, indexable content and metadata through the shared template. The approved workshop image remains a documented placeholder for service-specific real photography. Genuinely unfinished future routes must remain noindex.

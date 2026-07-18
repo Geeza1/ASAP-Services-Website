@@ -46,3 +46,5 @@ Service page architecture:
 - `RelatedServices` uses a tinted section background with white elevated cards and visible hover and keyboard-focus states.
 - `ServiceCTA` wraps its booking copy, CTA buttons and shared contact form in one white elevated conversion panel.
 - These reusable styles apply automatically to every completed service page.
+- All ten completed service pages resolve from the same typed content model and shared component composition; no route has a separate page layout.
+- Shared workshop imagery remains an approved placeholder until real service-specific photography is supplied.

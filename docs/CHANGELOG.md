@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.13 - 2026-07-18
+
+- Replaced nine noindex service placeholders with complete, unique service content.
+- Completed Alternator Repairs, Starter Motor Repairs, Electric Window Repairs, Brake Controllers, Anderson Plugs, Lighting Repairs, Battery & Charging System, Trailer Wiring and Caravan Auto Electrics.
+- Added unique metadata, visible content, FAQs, image alt text and completed related-service links for every route.
+- Kept the approved workshop image as a documented placeholder pending real service-specific photography.
+- Confirmed all ten priority service pages use the existing reusable template and are indexable.
+
 ## v1.12 - 2026-07-18
 
 - Added a stronger light-grey background and elevated white cards to the reusable Related Services section.

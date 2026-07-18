@@ -26,3 +26,4 @@ Service-page SEO implementation:
 - Published service pages include one H1, semantic sections, breadcrumbs, internal related-service links, Service schema and BreadcrumbList schema.
 - Development placeholders remain `noindex, nofollow` until unique content is approved.
 - FAQ schema is not added by default; visible FAQs remain useful page content and structured data will only be used when current Google eligibility guidance supports it.
+- All ten approved service routes have unique titles, descriptions, canonical URLs, H1s, visible content, FAQs and internal links. Completed routes are indexable; only genuinely unfinished routes may use noindex.
