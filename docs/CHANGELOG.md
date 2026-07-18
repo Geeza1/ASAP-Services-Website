@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.12 - 2026-07-18
+
+- Added a stronger light-grey background and elevated white cards to the reusable Related Services section.
+- Wrapped the reusable service enquiry copy, booking buttons and contact form in one elevated white conversion panel.
+- Standardised this visual hierarchy for all completed service pages.
+
+## v1.11 - 2026-07-18
+
+- Added a strongly typed, central service content and route model.
+- Added reusable service hero, content, process, vehicle, FAQ, related-service and contact CTA components.
+- Completed the Auto Electrical Diagnostics in Ringwood service page with unique metadata, canonical URL, breadcrumbs, Service and BreadcrumbList JSON-LD, internal links and the shared contact form.
+- Preserved all other approved service routes as noindex development placeholders.
+- Documented the reusable data-driven service-page architecture.
+
 ## v1.10 - 2026-07-12
 
 - Added email address and optional vehicle registration fields to the reusable contact form.

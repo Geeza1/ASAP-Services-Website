@@ -25,3 +25,5 @@ Phone visible above fold
 Reviews near top
 Map/contact visible
 No generic homepage traffic for service ads
+
+The reusable service template keeps the main navigation while placing the matched H1, booking CTA, phone number and Ringwood workshop clarification above the fold. It uses static server-rendered content with no unnecessary landing-page JavaScript.

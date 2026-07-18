@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ServicePlaceholder } from "../../../components/services/ServicePlaceholder";
-import { getServiceRouteBySlug, serviceRoutes } from "../../../lib/content/serviceRoutes";
+import { ServicePage as ServicePageLayout } from "../../../components/services/ServicePage";
+import { getServiceBySlug, services } from "../../../lib/content/services";
 
 type ServicePageProps = {
   params: Promise<{
@@ -12,17 +13,34 @@ type ServicePageProps = {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return serviceRoutes.map((route) => ({
+  return services.map((route) => ({
     slug: route.slug
   }));
 }
 
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const route = getServiceRouteBySlug(slug);
+  const route = getServiceBySlug(slug);
+
+  if (!route) return {};
+
+  if (route.content) {
+    return {
+      title: route.content.seoTitle,
+      description: route.content.metaDescription,
+      alternates: { canonical: `/services/${route.slug}` },
+      openGraph: {
+        title: route.content.seoTitle,
+        description: route.content.metaDescription,
+        url: `/services/${route.slug}`,
+        type: "website",
+        images: [{ url: route.content.heroImage, alt: route.content.heroImageAlt }]
+      }
+    };
+  }
 
   return {
-    title: route ? `${route.title} | ASAP Auto Electrics` : "Service Page | ASAP Auto Electrics",
+    title: `${route.shortTitle} | ASAP Auto Electrics`,
     robots: {
       index: false,
       follow: false
@@ -32,11 +50,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
-  const route = getServiceRouteBySlug(slug);
+  const route = getServiceBySlug(slug);
 
   if (!route) {
     notFound();
   }
 
-  return <ServicePlaceholder title={route.title} />;
+  if (route.content) return <ServicePageLayout service={route.content} />;
+
+  return <ServicePlaceholder title={route.shortTitle} />;
 }

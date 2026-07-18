@@ -18,6 +18,12 @@ Use `.reading-text` for long-form body copy, descriptive paragraphs, service des
 
 Do not use `.reading-text` for H1-H6 headings, hero headings, section headings, card headings, navigation, buttons, logos, labels or badges.
 
+## Service Page Conversion Sections
+
+- Related Services uses a subtle tinted background with white, softly elevated service cards.
+- The final enquiry section uses a unified white conversion panel with a slate border, rounded corners and a stronger soft shadow.
+- This background and elevation hierarchy is the standard for all service pages.
+
 Always follow these principles.
 
 Architecture

@@ -3,6 +3,8 @@
 Milestones: 1. Foundation 2. Homepage 3. Service Template 4. Service
 Pages 5. Area Pages 6. Blog 7. Landing Pages 8. Analytics
 
+Current status: the reusable service template and Auto Electrical Diagnostics page are complete for visual and content review. Remaining service pages are noindex development placeholders and must be authored individually after approval.
+
 Suggested structure
 asapauto.com.au
 ├── /
