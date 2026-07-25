@@ -43,13 +43,15 @@ export type ServiceRoute = {
 
 const calendlyUrl = "https://calendly.com/asapautoelectrics/auto-electrical-repair";
 
-type ServiceContentInput = Omit<ServiceContent, "heroImage" | "vehicles" | "primaryCtaLabel" | "secondaryCtaLabel" | "calendlyUrl">;
+type ServiceContentInput = Omit<ServiceContent, "heroImage" | "vehicles" | "primaryCtaLabel" | "secondaryCtaLabel" | "calendlyUrl"> & {heroImage?:string};
 
 function createServiceContent(input: ServiceContentInput): ServiceContent {
   return {
     ...input,
     // TODO: Replace the approved workshop placeholder with a real photograph of this specific service.
-    heroImage: "/reference/images/light-workshop-placeholder.png",
+    heroImage:
+  input.heroImage ??
+  "/reference/images/light-workshop-placeholder.png",
     vehicles: ["Passenger vehicles", "4WDs", "Light commercial vehicles", "Trailers", "Caravans", "Touring and accessory-equipped vehicles"],
     primaryCtaLabel: "Book Online",
     secondaryCtaLabel: "Call 03 9870 2722",
@@ -72,8 +74,7 @@ export const services = [
       eyebrow: "Auto Electrical Diagnostics",
       heroDescription:
         "Professional fault finding for warning lights, intermittent electrical problems, no-start conditions, charging faults and complex vehicle electrical issues.",
-      // TODO: Replace this approved workshop placeholder with a real diagnostics photograph.
-      heroImage: "/reference/images/light-workshop-placeholder.png",
+      heroImage: "/reference/images/2026/asap_diagnostics2.jpg",
       heroImageAlt:
         "ASAP Auto Electrics Ringwood workshop used for vehicle electrical diagnostics and fault finding",
       symptomsHeading: "Is your vehicle showing any of these symptoms?",
@@ -152,6 +153,7 @@ export const services = [
       seoTitle: "Alternator Repairs & Testing Ringwood | ASAP Auto Electrics",
       metaDescription: "Alternator testing, charging-system diagnosis and repair advice at our Ringwood workshop for battery lights, flat batteries and charging faults.",
       eyebrow: "Alternator Repairs", heroDescription: "Testing and repair for battery warning lights, low charging voltage, flat batteries, noisy alternators and charging-system faults.",
+      heroImage:"/reference/images/various/asap_alternator1.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for alternator testing and charging-system repairs",
       symptomsHeading: "Signs your alternator or charging system needs testing",
       symptoms: ["Battery warning light is on", "Battery repeatedly goes flat", "Vehicle loses electrical power", "Lights dim or flicker", "Slow cranking after driving", "Burning smell near the alternator", "Belt or bearing noise", "Charging voltage is too high or too low", "Vehicle stalls after the battery loses charge"],
@@ -190,6 +192,7 @@ export const services = [
       seoTitle: "Starter Motor Repairs & Testing Ringwood | ASAP Auto Electrics",
       metaDescription: "Starter motor and starting-system diagnosis at our Ringwood workshop for clicking, slow cranking, intermittent starting and no-crank faults.",
       eyebrow: "Starter Motor Repairs", heroDescription: "Diagnosis and repair for clicking, slow cranking, intermittent starting and no-crank faults.",
+      heroImage: "/reference/images/various/starter2.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for starter motor and starting-system diagnosis",
       symptomsHeading: "Is your vehicle showing a starting-system fault?",
       symptoms: ["Clicking when the key or start button is used", "Engine does not crank", "Starter operates intermittently", "Slow or laboured cranking", "Starter continues running", "Grinding noise during starting", "Vehicle starts after repeated attempts", "Dash lights operate but engine will not crank", "Hot-start or cold-start problems"],
@@ -229,6 +232,7 @@ export const services = [
       seoTitle: "Electric Window Repairs Ringwood | ASAP Auto Electrics",
       metaDescription: "Electric window diagnosis and repairs at our Ringwood workshop for windows that are stuck, slow, noisy, uneven or not responding.",
       eyebrow: "Electric Window Repairs", heroDescription: "Diagnosis and repair for windows that are slow, stuck, noisy, uneven or not responding to the switch.",
+      heroImage: "/reference/images/various/asap_window_motor2.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for electric window motor, regulator and wiring repairs",
       symptomsHeading: "Common electric window problems",
       symptoms: ["Window will not move", "Window is stuck open or closed", "Window moves slowly", "Clicking or grinding inside the door", "Window drops into the door", "Window moves unevenly", "One switch works but another does not", "Window operates intermittently", "Auto-up or auto-down function is not working"],
@@ -266,6 +270,7 @@ export const services = [
       seoTitle: "Brake Controller Installation Ringwood | ASAP Auto Electrics",
       metaDescription: "Electric trailer brake controller installation and fault diagnosis at our Ringwood workshop for towing vehicles, caravans and trailers.",
       eyebrow: "Brake Controller Installation", heroDescription: "Professional installation and diagnosis of electric trailer brake controllers for towing vehicles.",
+       heroImage: "/reference/images/2025/asap_brake_controller1.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for electric trailer brake controller installation",
       symptomsHeading: "Brake controller installation and fault-finding needs",
       symptoms: ["New brake controller required", "Trailer brakes are weak or inconsistent", "Controller displays a fault", "Brakes lock unexpectedly", "No trailer brake output", "Existing installation is untidy or unreliable", "Vehicle requires towing wiring upgrades", "Trailer recognition is intermittent", "Controller needs to suit a new trailer or caravan"],
@@ -303,6 +308,7 @@ export const services = [
       seoTitle: "Anderson Plug Installation Ringwood | ASAP Auto Electrics",
       metaDescription: "Anderson plug installation and wiring diagnosis at our Ringwood workshop for caravans, trailers, charging circuits and high-current accessories.",
       eyebrow: "Anderson Plug Installation", heroDescription: "Professional Anderson plug wiring for caravans, trailers, battery charging and high-current accessories.",
+      heroImage:"/reference/images/2026/asap_anderson_installation1.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for Anderson plug and high-current towing wiring",
       symptomsHeading: "Anderson plug installation and wiring needs",
       symptoms: ["Anderson plug required for a caravan", "Trailer battery is not charging", "Existing plug becomes hot", "Voltage at the trailer is too low", "Wiring is undersized", "Plug is damaged or loose", "Auxiliary battery connection required", "Fridge or accessory circuit needs power", "Existing installation needs inspection"],
@@ -340,6 +346,7 @@ export const services = [
       seoTitle: "Vehicle Lighting Repairs Ringwood | ASAP Auto Electrics",
       metaDescription: "Vehicle lighting diagnosis and repairs at our Ringwood workshop for headlights, indicators, brake lights, tail lights and driving-light faults.",
       eyebrow: "Vehicle Lighting Repairs", heroDescription: "Diagnosis and repair for headlights, indicators, brake lights, tail lights, driving lights and lighting wiring faults.",
+      heroImage:"/reference/images/2026/asap_car_light_repairs1.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for headlight, indicator and vehicle lighting repairs",
       symptomsHeading: "Common vehicle lighting faults",
       symptoms: ["Headlight not working", "Lights flicker or dim", "Indicator flashes too quickly", "Brake lights stay on or do not work", "Tail lights operate incorrectly", "Fuse repeatedly blows", "Water enters a lamp", "Driving lights do not operate", "Warning appears after fitting LED globes"],
@@ -377,6 +384,7 @@ export const services = [
       seoTitle: "Battery & Charging System Testing Ringwood | ASAP Auto Electrics",
       metaDescription: "Battery, starting and charging-system testing at our Ringwood workshop for flat batteries, slow cranking, warning lights and repeated battery failure.",
       eyebrow: "Battery & Charging System", heroDescription: "Testing for flat batteries, slow cranking, battery warning lights, charging faults and repeated battery failure.",
+      heroImage:"/reference/images/2025/asap_battery_charging_repair1_.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for battery and charging-system testing",
       symptomsHeading: "Does your battery or charging system show these signs?",
       symptoms: ["Battery repeatedly goes flat", "Slow starting", "Battery warning light", "Vehicle needs frequent jump starts", "New battery also goes flat", "Electrical systems reset", "Charging voltage is incorrect", "Battery drains while parked", "Vehicle loses power while driving"],
@@ -414,6 +422,7 @@ export const services = [
       seoTitle: "Trailer Wiring Repairs & Installation Ringwood | ASAP Auto Electrics",
       metaDescription: "Trailer plug, towing wiring, lighting and electric-brake circuit installation and repairs at our Ringwood auto electrical workshop.",
       eyebrow: "Trailer Wiring", heroDescription: "Diagnosis, repair and installation of trailer plugs, towing wiring, lighting circuits and electric-brake wiring.",
+      heroImage:"/reference/images/2025/asap_trailer_wiring_repair1.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for trailer plug and towing wiring repairs",
       symptomsHeading: "Trailer wiring problems and installation needs",
       symptoms: ["Trailer lights not working", "Indicators operate incorrectly", "Brake lights fail when trailer is connected", "Trailer plug is damaged", "Wiring has corrosion or poor connections", "New towbar requires wiring", "Electric-brake circuit needs repair", "Trailer intermittently disconnects", "Vehicle shows bulb or trailer warnings"],
@@ -445,12 +454,13 @@ export const services = [
     })
   },
   {
-    slug: "caravan-auto-electrics", shortTitle: "Caravan Auto Electrics",
+    slug: "caravan-towing-auto-electrics", shortTitle: "Caravan Towing Auto Electrics",
     content: createServiceContent({
-      slug: "caravan-auto-electrics", shortTitle: "Caravan Auto Electrics", pageTitle: "Caravan Auto Electrics in Ringwood",
-      seoTitle: "Caravan Auto Electrics Ringwood | ASAP Auto Electrics",
+      slug: "caravan-towing-auto-electrics", shortTitle: "Caravan Towing Auto Electrics", pageTitle: "Caravan Towing Auto Electrics in Ringwood",
+      seoTitle: "Caravan Towing Auto Electrics Ringwood | ASAP Auto Electrics",
       metaDescription: "Vehicle-side and accessible caravan electrical work at our Ringwood workshop, including charging circuits, Anderson plugs and towing wiring.",
-      eyebrow: "Caravan Auto Electrics", heroDescription: "Vehicle-side and accessible caravan electrical diagnosis, towing wiring, charging circuits, Anderson plugs and brake-controller systems.",
+      eyebrow: "Caravan Towing Auto Electrics", heroDescription: "Vehicle-side and accessible caravan electrical diagnosis, towing wiring, charging circuits, Anderson plugs and brake-controller systems.",
+      heroImage:"/reference/images/2026/asap_caravan_towing_electrics_installation1.jpg",
       heroImageAlt: "ASAP Auto Electrics Ringwood workshop for accessible caravan and tow-vehicle electrical work",
       symptomsHeading: "Caravan and tow-vehicle electrical needs",
       symptoms: ["Caravan battery is not charging while driving", "Anderson plug has no power", "Fridge circuit is not operating", "Electric brakes are inconsistent", "Trailer lights are faulty", "Charging voltage is low", "Existing wiring needs inspection", "Tow vehicle needs upgrades", "Caravan connection is intermittent"],
