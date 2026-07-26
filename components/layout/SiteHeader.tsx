@@ -41,22 +41,22 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/94 backdrop-blur">
-      <div className="mx-auto flex min-h-[84px] max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="relative block h-10 w-[220px] shrink-0 sm:h-12 sm:w-[340px] lg:w-[410px]"
-          aria-label="ASAP Auto Electrics home"
-        >
-          <Image
-            src="/reference/logos/asap-logo-header-blue.png"
-            alt="ASAP Auto Electrics"
-            fill
-            priority
-            sizes="(max-width: 639px) 220px, (max-width: 1023px) 340px, 410px"
-            className="object-contain object-left"
-          />
-        </Link>
+  <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/94 backdrop-blur">
+  <div className="mx-auto flex min-h-[92px] max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6 lg:px-8">
+    <Link
+      href="/"
+      className="relative block h-[48px] w-[250px] shrink-0 sm:h-[58px] sm:w-[400px] lg:h-[62px] lg:w-[430px]"
+      aria-label="ASAP Auto Electrics home"
+    >
+      <Image
+        src="/reference/logos/asap-logo-header.png"
+        alt="ASAP Auto Electrics"
+        fill
+        priority
+        sizes="(max-width: 639px) 250px, (max-width: 1023px) 400px, 430px"
+        className="object-contain object-left"
+      />
+    </Link>
 
         <nav
           aria-label="Main navigation"

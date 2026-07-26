@@ -17,19 +17,19 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="max-w-[300px] rounded-md bg-white px-3 py-2">
+            
               <Image
-                src="/reference/logos/asap-logo-header-blue.png"
+                src="/reference/logos/asap-logo-footer-white@3x.png"
                 alt="ASAP Auto Electrics"
-                width={2048}
-                height={187}
+                width={1400}
+                height={260}
                 sizes="(max-width: 639px) 280px, 300px"
                 className="h-auto w-full"
               />
-            </div>
+            
             <h2 className={`${footerHeadingClass} mt-6`}>ASAP Auto Electrics</h2>
             <p className="reading-text mt-6 text-slate-200">
-              Professional auto electrical diagnostics, repairs and installations from our fully equipped Ringwood workshop, proudly servicing Melbourne&apos;s eastern suburbs.
+              Professional auto electrical diagnostics, repairs and installations from our fully equipped Ringwood workshop, proudly servicing Melbourne&apos;s eastern suburbs since 1991.
             </p>
           </div>
 
