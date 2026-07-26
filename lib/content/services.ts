@@ -23,6 +23,7 @@ export type ServiceContent = {
   overviewHeading: string;
   overviewParagraphs: string[];
   processHeading: string;
+  processIntroduction?: string[];
   processSteps: ServiceProcessStep[];
   featuresHeading: string;
   features: string[];
@@ -52,7 +53,7 @@ function createServiceContent(input: ServiceContentInput): ServiceContent {
     heroImage:
   input.heroImage ??
   "/reference/images/light-workshop-placeholder.png",
-    vehicles: ["Passenger vehicles", "4WDs", "Light commercial vehicles", "Trailers", "Caravans", "Touring and accessory-equipped vehicles"],
+    vehicles: ["Passenger vehicles", "4WDs",  "Vans and utes","Light commercial vehicles", "Trailers",  "Touring and accessory-equipped vehicles"],
     primaryCtaLabel: "Book Online",
     secondaryCtaLabel: "Call 03 9870 2722",
     calendlyUrl
@@ -91,19 +92,18 @@ export const services = [
       ],
       overviewHeading: "Find the cause before replacing parts",
       overviewParagraphs: [
-        "Electrical symptoms can have several possible causes. A flat battery, warning light or no-start condition does not always mean the most obvious component has failed.",
-        "Accurate testing can help avoid unnecessary replacement of batteries, alternators, starter motors, switches, control modules and wiring components. We inspect and test the affected system, then explain what we find and recommend an appropriate repair path.",
-        "Diagnosis is performed at our fully equipped Ringwood workshop. The time required depends on the vehicle, the system involved and whether the fault is present or intermittent."
+        "Proper testing identifies the cause of electrical symptoms so the correct repair can be completed.",
+        "Our experienced auto electricians use professional equipment and proven methods to diagnose warning lights, starting faults, charging problems, wiring issues and electronic system faults.",
+        "All diagnosis and repair work is completed at our fully equipped Ringwood workshop, where your vehicle is looked after by an experienced team."
       ],
-      processHeading: "Our diagnostic process",
+      processHeading: "Our Diagnostic Process",
+      processIntroduction: [
+        "Our experienced auto electricians use professional equipment and proven testing methods to find faults accurately and complete repairs properly. From straightforward wiring issues to complex electrical and electronic faults, your vehicle is in capable hands."
+      ],
       processSteps: [
-        { title: "Discuss the symptoms", description: "We ask when the problem occurs and what you have noticed." },
-        { title: "Inspect the vehicle", description: "We check the vehicle and affected electrical system for relevant signs." },
-        { title: "Test the affected system", description: "We use suitable diagnostic and electrical tests for the reported issue." },
-        { title: "Isolate the fault", description: "We narrow down the circuit, component or condition contributing to the problem." },
-        { title: "Explain the findings", description: "We give you a clear summary of the test results." },
-        { title: "Recommend the repair", description: "We outline the appropriate next step based on the evidence available." },
-        { title: "Repair and confirm operation when approved", description: "With approval, we complete the repair and recheck system operation." }
+        { title: "Listen and assess", description: "We discuss the symptoms and check the vehicle to understand the problem." },
+        { title: "Test and diagnose", description: "Using proven testing methods and professional diagnostic equipment, we identify the cause of the fault accurately." },
+        { title: "Repair and verify", description: "We carry out the required repair and test the system to confirm correct operation." }
       ],
       featuresHeading: "Professional workshop fault finding",
       features: [
@@ -119,18 +119,16 @@ export const services = [
       vehicles: [
         "Passenger vehicles",
         "4WDs",
+        "Vans and utes",
         "Light commercial vehicles",
         "Trailers",
-        "Caravans",
-        "Touring and accessory-equipped vehicles"
+        "Towing and accessory-equipped vehicles"
       ],
       faqs: [
-        { question: "How much does auto electrical diagnosis cost?", answer: "Diagnostic cost depends on the vehicle, the system involved and how long it takes to reproduce and isolate the fault. Contact us with the vehicle details and symptoms so we can explain the likely booking approach. We will not invent a fixed repair price before the fault has been assessed." },
-        { question: "How long does diagnosis take?", answer: "Some faults can be identified quickly, while intermittent or complex wiring and communication faults may require more time. We cannot guarantee a turnaround before inspecting the vehicle, but we will explain our findings and next steps as the diagnosis progresses." },
-        { question: "Can you diagnose intermittent electrical faults?", answer: "Yes, we investigate intermittent faults. They can take longer to isolate because the problem may need to be present during testing. Details about when it occurs, weather conditions, recent work and any pattern you have noticed can be very helpful." },
+        { question: "Can you diagnose intermittent electrical faults?", answer: "Yes. Tell us when the problem occurs and any pattern you have noticed so our auto electricians can assess the fault using professional testing equipment." },
         { question: "Do you offer mobile auto electrical service?", answer: "No. ASAP Auto Electrics is workshop-based and does not provide mobile service. Please bring your vehicle to our fully equipped workshop at Unit 3/3 Oban Rd, Ringwood." },
         { question: "Should I replace the battery before booking?", answer: "Not unless it has already been properly tested and confirmed faulty. A battery that keeps going flat may be caused by a charging fault, excessive key-off current draw, wiring issue or another condition. Testing first can help avoid replacing the wrong part." },
-        { question: "Can you diagnose warning lights?", answer: "We can assess many warning-light and electrical fault concerns using scan-tool information together with electrical and system testing. Capability depends on the vehicle and the system involved, so provide the make, model, year and warning shown when booking." },
+        { question: "Can you diagnose warning lights?", answer: "Yes. We use scan-tool information together with electrical and system testing to identify the cause of warning lights and related faults." },
         { question: "What information should I bring to the booking?", answer: "Bring the vehicle details, keys and any relevant previous invoices or diagnostic reports. Tell us exactly what happens, when it started, how often it occurs, any warning messages displayed and whether parts or accessories were recently fitted or replaced." }
       ],
       relatedServiceSlugs: [
@@ -167,8 +165,8 @@ export const services = [
         { title: "Check output and ripple", description: "We assess alternator output and AC ripple where applicable." },
         { title: "Inspect wiring and voltage drop", description: "We check cables, terminals and losses in the charging circuit." },
         { title: "Identify the likely cause", description: "We distinguish between alternator, battery, belt and wiring concerns." },
-        { title: "Explain repair options", description: "We outline appropriate repair or replacement choices for approval." },
-        { title: "Retest approved work", description: "After approved work, we confirm charging-system operation." }
+        { title: "Explain repair options", description: "We outline appropriate repair or replacement choices." },
+        { title: "Retest charging system", description: "After completion, we load test the system and confirm charging performance." }
       ],
       featuresHeading: "Professional alternator and charging checks",
       features: ["Alternator output testing", "Charging-system diagnosis", "Voltage-drop testing", "Battery condition testing", "Belt and pulley inspection", "Charging wiring checks", "Regulator fault diagnosis", "Replacement or repair advice"],
@@ -207,7 +205,7 @@ export const services = [
         { title: "Check the start command", description: "We assess relevant ignition or start-button signals where applicable." },
         { title: "Inspect wiring and terminals", description: "We look for loose, damaged or high-resistance connections." },
         { title: "Explain repair options", description: "We recommend repair or replacement based on the results." },
-        { title: "Confirm operation", description: "We retest starting operation after approved work." }
+        { title: "Confirm operation", description: "We load test the starting circuit after all work." }
       ],
       featuresHeading: "Professional starter motor fault finding",
       features: ["Starter motor testing", "Starting-system diagnosis", "Current draw testing", "Voltage-drop testing", "Relay and control-circuit checks", "Battery cable inspection", "Solenoid fault diagnosis", "Replacement or repair recommendations"],
@@ -246,8 +244,8 @@ export const services = [
         { title: "Inspect regulator and guides", description: "We check mechanical support and movement inside the door." },
         { title: "Test motor operation", description: "We assess motor current and operation where accessible." },
         { title: "Check door-hinge wiring", description: "We inspect flexible wiring where repeated door movement can cause faults." },
-        { title: "Explain the repair", description: "We outline the parts or wiring work required for approval." },
-        { title: "Test full operation", description: "After approved repair, we check travel and relevant automatic functions." }
+        { title: "Explain the repair", description: "We outline the parts or wiring work required." },
+        { title: "Test full window operation", description: "After all repairs, we check travel and relevant automatic functions." }
       ],
       featuresHeading: "Electric window diagnosis and repair",
       features: ["Window motor testing", "Regulator inspection", "Switch diagnosis", "Wiring checks", "Door-harness fault finding", "Auto-window reset or relearn where applicable", "Mechanical guide inspection", "Clear repair recommendations"],
@@ -257,7 +255,7 @@ export const services = [
         { question: "Why does the window move slowly?", answer: "Slow movement can result from binding guides, regulator wear, low voltage, wiring resistance or a tired motor." },
         { question: "Can a window switch cause intermittent operation?", answer: "Yes. Switch contacts can wear, although flexible door wiring, connectors and motor faults can also be intermittent." },
         { question: "Why does the window drop inside the door?", answer: "A damaged regulator, cable, guide or glass attachment can allow the glass to lose support. Avoid operating it until inspected." },
-        { question: "Can you repair only one window?", answer: "Yes. We can assess an individual affected window without replacing components in windows that operate correctly." },
+        { question: "Can you repair only one window?", answer: "Yes. We can assess an individual affected window, without replacing components in other windows" },
         { question: "Do you need to remove the door trim?", answer: "Many motor and regulator checks require careful door-trim removal. We first confirm the symptoms and perform accessible electrical checks." }
       ],
       relatedServiceSlugs: ["auto-electrical-diagnostics", "lighting-repairs", "starter-motor-repairs", "battery-charging-system", "brake-controllers"]
@@ -290,10 +288,10 @@ export const services = [
       featuresHeading: "Professional towing brake electrical work",
       features: ["Brake controller installation", "Wiring diagnosis", "Protected power supply", "Trailer socket checks", "Brake-output testing", "Neat mounting", "Setup guidance", "Fault diagnosis for existing systems"],
       faqs: [
-        { question: "Which brake controller is best for my vehicle?", answer: "The choice depends on the vehicle, trailer brakes, towing use and compatibility requirements. Contact us with both vehicle and trailer details so we can discuss suitable options." },
+        { question: "Which brake controller is best for my vehicle?", answer: "The Redarc Towpro Elite is a popular choice, but it can depend on the vehicle, trailer brakes, towing use and compatibility requirements. Contact us with both vehicle and trailer details so we can discuss suitable options." },
         { question: "Do electric trailer brakes need a controller?", answer: "Electric trailer brakes require a compatible means of controlling brake output. Legal and towing requirements depend on the trailer and jurisdiction, so confirm the requirements for your combination." },
         { question: "Can you install a controller I already own?", answer: "Potentially, provided it is suitable, complete and compatible with the vehicle and trailer. We need to inspect the equipment and installation requirements first." },
-        { question: "Why does the controller show no trailer?", answer: "Possible causes include plug or socket faults, poor earths, damaged brake-output wiring, trailer brake issues or controller setup. Both sides of the connection may require testing." },
+        { question: "Why does the controller show no trailer or flash red led?", answer: "Possible causes include plug or socket faults, poor earths, damaged brake-output wiring, trailer brake issues or controller setup. Both sides of the connection may require testing." },
         { question: "Can you diagnose weak trailer brakes?", answer: "We can test vehicle-side controller output and accessible wiring. Trailer mechanical brake condition may require a trailer brake specialist." },
         { question: "How should a brake controller be adjusted?", answer: "Adjustment depends on trailer load, brake condition and controller design. Follow the controller instructions and set it so braking is balanced without locking." },
         { question: "Do you install controllers for caravans and trailers?", answer: "Yes, for suitable towing vehicles and compatible electric-brake systems. Provide the tow vehicle and trailer or caravan details before booking." }
@@ -328,11 +326,11 @@ export const services = [
       featuresHeading: "High-current accessory and towing wiring",
       features: ["High-current cable installation", "Anderson plug fitting", "Fuse and circuit protection", "Voltage-drop testing", "Caravan charging circuits", "Auxiliary battery connections", "Trailer power wiring", "Diagnosis of existing installations"],
       faqs: [
-        { question: "What size Anderson plug do I need?", answer: "Plug and cable size depend on the continuous current, cable length and equipment being supplied. Bigger is not automatically better if the rest of the circuit is mismatched." },
+        { question: "What size Anderson plug do I need?", answer: "Plug and cable size depend on the continuous current, cable length and equipment being supplied. A 50A plug is commonly used for caravan applications." },
         { question: "Can an Anderson plug charge a caravan battery?", answer: "It can form part of a charging circuit, but correct charging also depends on vehicle output, cable size, voltage drop and the caravan's charger or battery-management equipment." },
         { question: "Why is my Anderson plug getting hot?", answer: "Heat can indicate loose or contaminated contacts, poor termination, excessive current or undersized cable. Stop using a hot connection and have it inspected." },
         { question: "Do I need a fuse or circuit breaker?", answer: "High-current positive cables generally require correctly rated protection close to power sources. The exact arrangement depends on the circuit." },
-        { question: "Can you install an Anderson plug at the rear of the vehicle?", answer: "Yes, where the vehicle and intended circuit are suitable. We route and protect the cable to a practical rear connection point." },
+        { question: "Can you install an Anderson plug inside the rear of the vehicle?", answer: "Yes, where the vehicle and intended circuit are suitable. We route and protect the cable to a practical rear connection point." },
         { question: "Can you inspect an existing installation?", answer: "Yes. We can inspect accessible cable, protection, terminations, polarity and voltage performance at our workshop." },
         { question: "What causes low voltage at the caravan?", answer: "Common causes include long or undersized cable, poor connections, inadequate earths, charging-system behaviour and load on the circuit." }
       ],
@@ -360,8 +358,8 @@ export const services = [
         { title: "Inspect fuses and relays", description: "We check protection and switching components where applicable." },
         { title: "Check controls", description: "We assess switches and relevant control-module commands." },
         { title: "Inspect wiring and connectors", description: "We trace accessible wiring for damage, heat or corrosion." },
-        { title: "Explain the repair", description: "We outline the evidence and recommended work." },
-        { title: "Confirm operation", description: "We retest relevant lighting functions after approved work." }
+        { title: "Explain the repair", description: "We outline the evidence and work." },
+        { title: "Confirm operation", description: "We retest relevant lighting functions after all work." }
       ],
       featuresHeading: "Vehicle lighting diagnosis and repair",
       features: ["Headlight diagnosis", "Indicator fault finding", "Brake and tail-light repairs", "Relay and fuse testing", "Earth-circuit checks", "Wiring repairs", "Driving-light diagnosis", "LED compatibility checks where applicable"],
@@ -371,7 +369,7 @@ export const services = [
         { question: "Can a bad earth cause multiple lighting faults?", answer: "Yes. A poor shared earth can make several lights dim, back-feed or operate together incorrectly." },
         { question: "Why do LED globes cause warning lights?", answer: "Some vehicles monitor globe current. An LED may draw differently from the expected globe and trigger warnings or irregular operation." },
         { question: "Can you repair trailer-lighting faults?", answer: "Yes. We can test vehicle sockets and accessible trailer lighting wiring. Bring both vehicle and trailer where possible." },
-        { question: "Why are my headlights dim?", answer: "Possible causes include aged lamps, voltage drop, poor earths, damaged reflectors, charging voltage or lens condition." },
+        { question: "Why are my headlights dim?", answer: "Some vehicle headlight are a function of design and style but do not produce good light output. Possible causes include aged lamps, voltage drop, poor earths, damaged reflectors, charging voltage or lens condition." },
         { question: "Can you diagnose intermittent lighting faults?", answer: "Yes, although faults that are not present during inspection may require additional time. Note when vibration, weather or other controls affect the symptom." }
       ],
       relatedServiceSlugs: ["auto-electrical-diagnostics", "trailer-wiring", "battery-charging-system", "alternator-repairs", "anderson-plugs"]
@@ -398,8 +396,8 @@ export const services = [
         { title: "Test alternator output", description: "We assess charging voltage and output under relevant conditions." },
         { title: "Check parasitic current", description: "Where required, we investigate excessive current while the vehicle is parked." },
         { title: "Inspect terminals and cables", description: "We check connections for looseness, corrosion and voltage drop." },
-        { title: "Explain cause and options", description: "We explain the findings and suitable next steps." },
-        { title: "Retest approved repair", description: "We confirm system operation after approved work." }
+        { title: "Explain cause and repair", description: "We explain the findings and repair." },
+        { title: "Retest charging system", description: "We confirm the system voltages after all work." }
       ],
       featuresHeading: "Complete battery and charging checks",
       features: ["Battery condition testing", "Charging-system testing", "Starting-system checks", "Parasitic drain investigation", "Voltage-drop testing", "Terminal and cable inspection", "Alternator output testing", "Battery replacement advice"],
@@ -409,7 +407,7 @@ export const services = [
         { question: "How do you test for a parasitic drain?", answer: "We measure key-off current after the vehicle systems have settled, then isolate circuits where practical. Modern vehicles may require time and staged testing." },
         { question: "Does a battery warning light always mean the battery is faulty?", answer: "No. It more commonly indicates a charging-system concern involving alternator output, belt drive, wiring or system control." },
         { question: "Can short trips flatten a battery?", answer: "Frequent short trips may use more energy for starting than the charging system restores, particularly with high accessory use or a battery already below full charge." },
-        { question: "How long should a car battery last?", answer: "Battery life varies with type, heat, vehicle use, charging conditions and electrical load. Condition testing is more useful than relying on age alone." },
+        { question: "How long should a car battery last?", answer: "Our batteries come with a 3 year warranty. Battery life varies with type, heat, vehicle use, charging conditions and electrical load, 3 to 7 years is typical. Condition testing is more useful than relying on age alone." },
         { question: "Should I replace the battery before testing the alternator?", answer: "Testing the battery and charging system together is preferable unless the battery has already been conclusively assessed as unsafe or failed." }
       ],
       relatedServiceSlugs: ["alternator-repairs", "starter-motor-repairs", "auto-electrical-diagnostics", "lighting-repairs", "caravan-auto-electrics"]
@@ -433,14 +431,12 @@ export const services = [
         { title: "Discuss the setup", description: "We confirm the vehicle, trailer, connector and reported symptoms." },
         { title: "Inspect plugs and sockets", description: "We check accessible pins, housings and terminations for damage or corrosion." },
         { title: "Test vehicle outputs", description: "We verify lighting and relevant brake signals at the vehicle connection." },
-        { title: "Inspect earth circuits", description: "We test the return path that is shared by trailer functions." },
         { title: "Check trailer wiring", description: "With the trailer present, we inspect accessible wiring and outputs." },
-        { title: "Repair connections", description: "We repair approved damaged wiring, plugs or sockets." },
-        { title: "Test lighting and brakes", description: "We confirm available lighting and electric-brake circuits." },
-        { title: "Explain remaining faults", description: "We identify any trailer-side work outside the agreed scope." }
+        { title: "Upgrade lights, wiring & plug circuits", description: "We confirm the best long term option upgrade the wiring & light system or repair." },
+       
       ],
       featuresHeading: "Trailer plug and towing circuit services",
-      features: ["Trailer plug installation", "Socket repairs", "Lighting-circuit diagnosis", "Earth repairs", "Brake-output wiring", "Towing-module checks", "Corrosion repairs", "Wiring upgrades"],
+      features: ["Trailer plug installation", "LED trailer light upgrades", "Lighting-circuit diagnosis", "Earth repairs", "Brake-output wiring", "Towing-module checks", "Number Plate led lights", "Wiring upgrades"],
       faqs: [
         { question: "Why do trailer lights stop working?", answer: "Common causes include poor earths, corroded pins, damaged cables, failed lamps, vehicle socket faults or incorrect wiring." },
         { question: "Can a poor earth cause several trailer-light faults?", answer: "Yes. A shared earth fault can cause dim lights, back-feeding and several functions operating incorrectly together." },

@@ -73,7 +73,7 @@ export function SiteFooter() {
             <dl className="mt-6 grid gap-5">
               <div>
                 <dt className="text-sm font-black uppercase text-white">Monday&ndash;Friday</dt>
-                <dd className="reading-text mt-1 text-slate-200">8:00am&ndash;5:00pm</dd>
+                <dd className="reading-text mt-1 text-slate-200">8:30am&ndash;5:30pm</dd>
               </div>
               <div>
                 <dt className="text-sm font-black uppercase text-white">Saturday</dt>

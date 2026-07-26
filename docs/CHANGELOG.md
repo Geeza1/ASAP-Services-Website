@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.14 - 2026-07-26
+
+- Rewrote the Auto Electrical Diagnostics process as three concise, reassuring steps focused on assessment, accurate diagnosis, repair and verification.
+- Added a short introduction highlighting the workshop team's experience, professional equipment and proven testing methods.
+- Removed diagnostics-page wording that over-explained fault-finding or emphasised difficulty, uncertainty, cost and completion timing.
+- Recorded the rule that service-page copy should explain technical processes briefly and positively to build confidence and encourage bookings.
+
 ## v1.13 - 2026-07-18
 
 - Replaced nine noindex service placeholders with complete, unique service content.

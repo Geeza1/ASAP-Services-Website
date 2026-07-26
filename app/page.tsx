@@ -38,7 +38,7 @@ const services = [
   {
     title: "Diagnostics & Fault Finding",
     description:
-      "Electrical issues diagnosed properly before repairs begin, from warning lights through to intermittent no-start faults.",
+      "Electrical issues diagnosed properly, from warning lights through to intermittent no-start faults.",
     icon: Zap
   },
   {

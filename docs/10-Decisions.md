@@ -83,3 +83,15 @@ Complete priority service content in the central model.
 Reason
 
 All ten approved service routes use unique, indexable content and metadata through the shared template. The approved workshop image remains a documented placeholder for service-specific real photography. Genuinely unfinished future routes must remain noindex.
+
+-----------------------
+
+2026-07-26
+
+Decision
+
+Service-page copy should build confidence and encourage bookings. Technical processes should be explained briefly and positively without making the work sound difficult, uncertain or expensive.
+
+Reason
+
+Customers should quickly understand that ASAP Auto Electrics has the experience, equipment and proven methods to diagnose faults accurately, complete repairs properly and look after their vehicle.

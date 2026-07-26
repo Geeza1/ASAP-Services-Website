@@ -23,3 +23,4 @@ Service-page content rules:
 - Do not invent prices, completion times or guaranteed outcomes.
 - State that customers bring vehicles to the Ringwood workshop; never imply mobile service.
 - For caravan work, state that capability depends on system type, access and repair scope.
+- Service-page copy should build confidence and encourage bookings. Technical processes should be explained briefly and positively without making the work sound difficult, uncertain or expensive.
