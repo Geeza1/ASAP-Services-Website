@@ -9,11 +9,18 @@ const inter = Inter({
   weight: ["400", "500", "600"]
 });
 
-export const metadata: Metadata = {
-  title: "Auto Electric Problems? | ASAP Auto Electrics Ringwood",
-  description:
-    "Fast, expert auto electrical service and repair from ASAP Auto Electrics in Ringwood, servicing Melbourne's Eastern Suburbs.",
-  metadataBase: new URL("https://asapauto.com.au")
+//export const metadata: Metadata = {
+//  title: "Auto Electric Problems? | ASAP Auto Electrics Ringwood",
+//  description:
+  //  "Fast, expert auto electrical service and repair from ASAP Auto Electrics in Ringwood, servicing Melbourne's Eastern Suburbs.",
+  //metadataBase: new URL("https://asapauto.com.au")
+//};
+
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
