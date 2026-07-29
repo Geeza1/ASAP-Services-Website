@@ -51,8 +51,7 @@ export function GoogleReviews() {
 
         <div className="mt-10 text-center">
           <a
-            // TODO: Insert Google Business Profile reviews URL when available.
-            href="#reviews"
+            href="https://g.page/r/CYQfIWSvVPQcEBM/review"
             className="inline-flex min-h-12 items-center justify-center rounded-full bg-asap-purple px-6 font-black text-white shadow-sm transition hover:bg-asap-cyan hover:text-slate-950"
           >
             Read More Google Reviews

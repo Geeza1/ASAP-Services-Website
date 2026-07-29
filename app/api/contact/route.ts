@@ -164,6 +164,19 @@ export async function POST(request: Request) {
   const emailFrom = process.env.EMAIL_FROM;
   const emailTo = process.env.EMAIL_TO;
 
+  console.log("Contact email configuration", {
+  smtpHost: Boolean(smtpHost),
+  smtpPort,
+  smtpPortValid: Number.isFinite(smtpPort),
+  smtpSecureValue,
+  smtpSecureValid: ["true", "false"].includes(
+    smtpSecureValue || "",
+  ),
+  smtpUser: Boolean(smtpUser),
+  smtpPass: Boolean(smtpPass),
+  emailFrom: Boolean(emailFrom),
+  emailTo: Boolean(emailTo),
+});
   if (!smtpHost || !Number.isFinite(smtpPort) || !["true", "false"].includes(smtpSecureValue || "") || !smtpUser || !smtpPass || !emailFrom || !emailTo) {
     return jsonResponse({ ok: false, message: "Email delivery is not configured." }, 500);
   }
