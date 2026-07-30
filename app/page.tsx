@@ -126,7 +126,7 @@ export default function Home() {
             <div className="absolute -bottom-4 -left-4 h-36 w-36 rounded-full bg-asap-purple/10" />
             <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl">
               <Image
-                src="/reference/images/light-workshop-placeholder.png"
+                src="/reference/images/asap-light-workshop.png"
                 alt="Placeholder workshop image for ASAP Auto Electrics diagnostics and repairs"
                 width={1200}
                 height={760}
