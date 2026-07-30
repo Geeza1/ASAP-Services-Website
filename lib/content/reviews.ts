@@ -12,24 +12,24 @@ export const homepageGoogleReviews: GoogleReview[] = [
     customerName: "Mark D.",
     rating: 5,
     reviewText:
-      "Great service and clear communication. The team diagnosed the electrical issue properly and had the car sorted without any fuss.",
+      "The ASAP Auto Electrics Team did a get job of installing my new Bluetti Charger 1 on my GWM Tank 300.  Great customer service and support, and reasonably priced!  Very happy to recommend them for any auto electrical work requirements around the Ringwood area.",
     service: "Electrical diagnostics",
     date: "2026",
     sourceLabel: "Google Review"
   },
   {
-    customerName: "Sarah M.",
+    customerName: "Teagy W.",
     rating: 5,
     reviewText:
-      "Very professional workshop. They explained what was wrong, gave honest advice and fixed the problem quickly.",
+      "Would definitely recommend! Very prompt and considerate with explaining and sharing knowledge on how he installed the front and rear dash cam. Job was done fast and efficiently with few visible wires and ensuring all wires don't impact air bags and driving vision.",
     service: "Auto electrical repair",
     sourceLabel: "Google Review"
   },
   {
-    customerName: "James R.",
+    customerName: "Errol F.",
     rating: 5,
     reviewText:
-      "Helpful, friendly and reliable. I would recommend ASAP Auto Electrics to anyone needing auto electrical work in Ringwood.",
+      "Absolutely fantastic customer service, they went above and beyond to help me out and their prices are very competitive... Highly recommend and will be using them again.",
     service: "Workshop service",
     date: "2026",
     sourceLabel: "Google Review"
