@@ -164,19 +164,6 @@ export async function POST(request: Request) {
   const emailFrom = process.env.EMAIL_FROM;
   const emailTo = process.env.EMAIL_TO;
 
-  console.log("Contact email configuration", {
-  smtpHost: Boolean(smtpHost),
-  smtpPort,
-  smtpPortValid: Number.isFinite(smtpPort),
-  smtpSecureValue,
-  smtpSecureValid: ["true", "false"].includes(
-    smtpSecureValue || "",
-  ),
-  smtpUser: Boolean(smtpUser),
-  smtpPass: Boolean(smtpPass),
-  emailFrom: Boolean(emailFrom),
-  emailTo: Boolean(emailTo),
-});
   if (!smtpHost || !Number.isFinite(smtpPort) || !["true", "false"].includes(smtpSecureValue || "") || !smtpUser || !smtpPass || !emailFrom || !emailTo) {
     return jsonResponse({ ok: false, message: "Email delivery is not configured." }, 500);
   }
@@ -327,6 +314,33 @@ try {
   // Do not tell the customer that their form submission failed.
   console.error("Customer acknowledgement email failed", error);
 }
+//testing form acknowledgement email sending and logging the result
+const acknowledgementResult = await transporter.sendMail({
+  from: emailFrom,
+  to: email,
+  replyTo: emailTo,
+  subject: "We received your enquiry - ASAP Auto Electrics",
+  text: acknowledgementText,
+  html: `
+    <p>Hi ${escapeHtml(name)},</p>
+    <p>Thanks for contacting ASAP Auto Electrics.</p>
+    <p>We have received your enquiry and will get back to you as soon as possible during business hours.</p>
+    <p>For urgent assistance, please call our Ringwood workshop on 03 9870 2722.</p>
+    <p>
+      Regards,<br><br>
+      <strong>ASAP Auto Electrics</strong><br>
+      Ringwood Auto Electrical Workshop<br>
+      <a href="https://asapauto.com.au">asapauto.com.au</a>
+    </p>
+  `,
+});
+
+console.log("Customer acknowledgement accepted by SMTP", {
+  messageId: acknowledgementResult.messageId,
+  accepted: acknowledgementResult.accepted,
+  rejected: acknowledgementResult.rejected,
+  response: acknowledgementResult.response,
+});
 
 return jsonResponse(
   {
