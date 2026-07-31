@@ -196,107 +196,142 @@ export async function POST(request: Request) {
   ];
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: process.env.SMTP_SECURE === "true",
+  host: smtpHost,
+  port: smtpPort,
+  secure: smtpSecure,
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: smtpUser,
+    pass: smtpPass,
   },
-  //temporary testing form connection issues with vercel, these timeouts are set to higher values
-connectionTimeout: 60_000,
+
+  // Temporarily increased while testing the Rochen connection delay.
+  connectionTimeout: 60_000,
   greetingTimeout: 60_000,
   socketTimeout: 90_000,
 });
 
-console.log("Creating SMTP connection...");
+try {
+  console.log("Sending workshop enquiry email");
 
-await transporter.verify();
+  await transporter.sendMail({
+    from: emailFrom,
+    to: emailTo,
+    replyTo: email,
+    subject,
+    text: lines.join("\n"),
+    html: `
+      <h2>Website Enquiry - ASAP Auto Electrics</h2>
 
-console.log("SMTP VERIFIED");
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
 
-// Only after verification succeeds:
-await transporter.sendMail({
-  // workshop email
-});
+      ${
+        registration
+          ? `<p><strong>Vehicle Registration:</strong> ${escapeHtml(
+              registration,
+            )}</p>`
+          : ""
+      }
 
-  try {
-    await transporter.verify();
-console.log("SMTP connection verified");
-    await transporter.sendMail({
-      from: emailFrom,
-      to: emailTo,
-      replyTo: email,
-      subject,
-      text: lines.join("\n"),
-      html: `
-        <h2>Website Enquiry - ASAP Auto Electrics</h2>
-        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        ${registration ? `<p><strong>Vehicle Registration:</strong> ${escapeHtml(registration)}</p>` : ""}
-        <p><strong>Vehicle or Issue:</strong><br>${escapeHtml(vehicleIssue).replace(/\n/g, "<br>")}</p>
-        <p><strong>Service name:</strong> ${escapeHtml(serviceName || "Not supplied")}</p>
-        <p><strong>Source page URL:</strong> ${escapeHtml(pageUrl || sourcePage || "Not supplied")}</p>
-        <p><strong>Submission date and time:</strong> ${escapeHtml(submittedAt.toLocaleString("en-AU", { timeZone: "Australia/Melbourne" }))}</p>
-      `
-    });
+      <p>
+        <strong>Vehicle or Issue:</strong><br>
+        ${escapeHtml(vehicleIssue).replace(/\n/g, "<br>")}
+      </p>
 
-    const acknowledgementText = [
-      `Hi ${name},`,
-      "",
-      "Thanks for contacting ASAP Auto Electrics.",
-      "",
-      "We have received your enquiry and will get back to you as soon as possible during business hours.",
-      "",
-      "For urgent assistance, please call our Ringwood workshop on 03 9870 2722.",
-      "",
-      "Regards,",
-      "",
-      "ASAP Auto Electrics",
-      "Ringwood Auto Electrical Workshop",
-      "https://asapauto.com.au"
-    ].join("\n");
+      <p>
+        <strong>Service name:</strong>
+        ${escapeHtml(serviceName || "Not supplied")}
+      </p>
 
-    try {
-      await transporter.sendMail({
-        from: emailFrom,
-        to: email,
-        subject: "We received your enquiry - ASAP Auto Electrics",
-        text: acknowledgementText,
-        html: `
-          <p>Hi ${escapeHtml(name)},</p>
-          <p>Thanks for contacting ASAP Auto Electrics.</p>
-          <p>We have received your enquiry and will get back to you as soon as possible during business hours.</p>
-          <p>For urgent assistance, please call our Ringwood workshop on 03 9870 2722.</p>
-          <p>Regards,</p>
-          <p>ASAP Auto Electrics<br>Ringwood Auto Electrical Workshop<br><a href="https://asapauto.com.au">https://asapauto.com.au</a></p>
-        `
-      });
-      console.log("Creating SMTP connection...");
+      <p>
+        <strong>Source page URL:</strong>
+        ${escapeHtml(pageUrl || sourcePage || "Not supplied")}
+      </p>
 
-await transporter.verify();
+      <p>
+        <strong>Submission date and time:</strong>
+        ${escapeHtml(
+          submittedAt.toLocaleString("en-AU", {
+            timeZone: "Australia/Melbourne",
+          }),
+        )}
+      </p>
+    `,
+  });
 
-console.log("SMTP VERIFIED");
-  } catch (error) {
-  console.error("=================================");
-  console.error("CONTACT API ERROR");
-  console.error(error);
-  console.error("=================================");
+  console.log("Workshop enquiry email sent");
+} catch (error) {
+  console.error("Workshop enquiry email failed", error);
 
-  return Response.json(
+  return jsonResponse(
     {
-      success: false,
-      message: "Unable to send enquiry.",
-      error:
-        error instanceof Error ? error.message : String(error),
+      ok: false,
+      message:
+        "We couldn't send your enquiry. Please try again or call 03 9870 2722.",
     },
-    { status: 500 }
+    500,
   );
 }
 
-    return jsonResponse({ ok: true, message: "Enquiry sent." }, 200);
-  } catch {
-    return jsonResponse({ ok: false, message: "Email could not be sent." }, 500);
-  }
+const acknowledgementText = [
+  `Hi ${name},`,
+  "",
+  "Thanks for contacting ASAP Auto Electrics.",
+  "",
+  "We have received your enquiry and will get back to you as soon as possible during business hours.",
+  "",
+  "For urgent assistance, please call our Ringwood workshop on 03 9870 2722.",
+  "",
+  "Regards,",
+  "",
+  "ASAP Auto Electrics",
+  "Ringwood Auto Electrical Workshop",
+  "https://asapauto.com.au",
+].join("\n");
+
+try {
+  await transporter.sendMail({
+    from: emailFrom,
+    to: email,
+    replyTo: emailTo,
+    subject: "We received your enquiry - ASAP Auto Electrics",
+    text: acknowledgementText,
+    html: `
+      <p>Hi ${escapeHtml(name)},</p>
+
+      <p>Thanks for contacting ASAP Auto Electrics.</p>
+
+      <p>
+        We have received your enquiry and will get back to you as soon
+        as possible during business hours.
+      </p>
+
+      <p>
+        For urgent assistance, please call our Ringwood workshop on
+        03 9870 2722.
+      </p>
+
+      <p>
+        Regards,<br><br>
+        <strong>ASAP Auto Electrics</strong><br>
+        Ringwood Auto Electrical Workshop<br>
+        <a href="https://asapauto.com.au">asapauto.com.au</a>
+      </p>
+    `,
+  });
+
+  console.log("Customer acknowledgement email sent");
+} catch (error) {
+  // The workshop has already received the enquiry.
+  // Do not tell the customer that their form submission failed.
+  console.error("Customer acknowledgement email failed", error);
 }
+
+return jsonResponse(
+  {
+    ok: true,
+    message: "Your enquiry has been sent successfully.",
+  },
+  200,
+);}
