@@ -276,35 +276,21 @@ const acknowledgementText = [
 ].join("\n");
 
 try {
-  await transporter.sendMail({
-    from: emailFrom,
-    to: email,
-    replyTo: emailTo,
-    subject: "We received your enquiry - ASAP Auto Electrics",
-    text: acknowledgementText,
-    html: `
-      <p>Hi ${escapeHtml(name)},</p>
-
-      <p>Thanks for contacting ASAP Auto Electrics.</p>
-
-      <p>
-        We have received your enquiry and will get back to you as soon
-        as possible during business hours.
-      </p>
-
-      <p>
-        For urgent assistance, please call our Ringwood workshop on
-        03 9870 2722.
-      </p>
-
-      <p>
-        Regards,<br><br>
-        <strong>ASAP Auto Electrics</strong><br>
-        Ringwood Auto Electrical Workshop<br>
-        <a href="https://asapauto.com.au">asapauto.com.au</a>
-      </p>
-    `,
-  });
+await transporter.sendMail({
+  from: emailFrom,
+  to: email,
+  replyTo: emailTo,
+  subject: "ASAP Auto Electrics enquiry received",
+  text: [
+    `Hi ${name},`,
+    "",
+    "Thank you for contacting ASAP Auto Electrics.",
+    "We have received your enquiry and will contact you during business hours.",
+    "",
+    "ASAP Auto Electrics",
+    "03 9870 2722",
+  ].join("\n"),
+});
 
   console.log("Customer acknowledgement email sent");
 } catch (error) {
