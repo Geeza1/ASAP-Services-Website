@@ -39,13 +39,9 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     };
   }
 
-  return {
-    title: `${route.shortTitle} | ASAP Auto Electrics`,
-    robots: {
-      index: false,
-      follow: false
-    }
-  };
+return {
+  title: `${route.shortTitle} | ASAP Auto Electrics`,
+};
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
