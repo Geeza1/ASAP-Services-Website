@@ -190,11 +190,9 @@ const transporter = nodemailer.createTransport({
     user: smtpUser,
     pass: smtpPass,
   },
-
-  // Temporarily increased while testing the Rochen connection delay.
-  connectionTimeout: 60_000,
-  greetingTimeout: 60_000,
-  socketTimeout: 90_000,
+connectionTimeout: 20_000,
+greetingTimeout: 20_000,
+socketTimeout: 30_000,
 });
 
 try {
