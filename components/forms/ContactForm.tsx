@@ -87,7 +87,14 @@ export function ContactForm({
       setWebsite("");
       setStartedAt(Date.now());
       setStatus("success");
-      // TODO: Add Google Ads or GA4 conversion tracking after a successful contact form submission.
+
+      window.dataLayer = window.dataLayer || [];
+
+      window.dataLayer.push({
+        event: "contact_form_success",
+        form_name: "website_enquiry",
+        service_name: serviceName || "general",
+      });
     } catch {
       setStatus("error");
     }
