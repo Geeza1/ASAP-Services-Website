@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://asapauto.com.au";
+const siteUrl = "https://www.asapauto.com.au";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const serviceSlugs = [
