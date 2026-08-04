@@ -71,10 +71,10 @@ export const services = [
       pageTitle: "Auto Electrical Diagnostics in Ringwood",
       seoTitle: "Auto Electrical Diagnostics Ringwood | ASAP Auto Electrics",
       metaDescription:
-        "Professional auto electrical diagnostics and fault finding at our Ringwood workshop for warning lights, no-start faults and complex electrical issues.",
+        "Professional auto electrical diagnostics and fault finding at our Ringwood workshop for warning lights, no-start faults and vehicle electrical issues.",
       eyebrow: "Auto Electrical Diagnostics",
       heroDescription:
-        "Professional fault finding for warning lights, intermittent electrical problems, no-start conditions, charging faults and complex vehicle electrical issues.",
+        "Professional fault finding for warning lights, intermittent electrical problems, no-start conditions, charging faults and  vehicle electrical issues.",
       heroImage: "/reference/images/2026/asap_diagnostics2.jpg",
       heroImageAlt:
         "ASAP Auto Electrics Ringwood workshop used for vehicle electrical diagnostics and fault finding",
@@ -98,7 +98,7 @@ export const services = [
       ],
       processHeading: "Our Diagnostic Process",
       processIntroduction: [
-        "Our experienced auto electricians use professional equipment and proven testing methods to find faults accurately and complete repairs properly. From straightforward wiring issues to complex electrical and electronic faults, your vehicle is in capable hands."
+        "Our experienced auto electricians use professional equipment and proven testing methods to find faults accurately and complete repairs properly. From straightforward wiring issues to electrical and electronic faults, your vehicle is in capable hands."
       ],
       processSteps: [
         { title: "Listen and assess", description: "We discuss the symptoms and check the vehicle to understand the problem." },
