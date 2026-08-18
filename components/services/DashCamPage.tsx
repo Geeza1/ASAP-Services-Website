@@ -7,7 +7,7 @@ import { SiteFooter } from "../layout/SiteFooter";
 import { SiteHeader } from "../layout/SiteHeader";
 
 const phoneDisplay = "03 9872 2722";
-const bookingUrl = "https://calendly.com/asapautoelectrics/auto-electrical-repair";
+const bookingUrl = "https://calendly.com/asapautoelectrics/dash-cam-installation";
 const included = ["4K Ultra HD front dash camera", "1080P rear dash camera", "Front and rear simultaneous recording", "Parking mode with impact detection", "Wi-Fi smartphone connectivity", "Hardwire installation kit", "32GB TF memory card included", "Support for TF cards up to 128GB", "Professional concealed wiring", "Installation by an auto electrician", "Testing and setup before vehicle handover"];
 type DashCamFeature = { title: string; icon: typeof Camera; copy: string; image?: string; imageAlt?: string };
 const features: DashCamFeature[] = [
@@ -26,7 +26,7 @@ const installation = ["Concealed wiring where practical", "Correct ignition-swit
 const whyAsap = ["Installed by experienced auto electricians", "Professional hardwired installation", "Front and rear camera package supplied", "Parking-mode wiring included where suitable", "Clean concealed wiring", "Electrical system tested before connection", "Ringwood workshop", "Local established auto electrical business"];
 const vehicles = ["Passenger vehicles", "SUVs", "4WDs", "Utes", "Light commercial vehicles"];
 
-const ButtonPair = () => <div className="flex flex-col gap-3 sm:flex-row"><a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-cyan px-6 font-black text-slate-950 transition hover:bg-asap-purple hover:text-white"><CalendarCheck size={20} aria-hidden />Book Dash Cam Installation</a><a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white"><Phone size={20} aria-hidden />Call {phoneDisplay}</a></div>;
+const ButtonPair = () => <div className="flex flex-col gap-3 sm:flex-row"><a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-cyan px-6 font-black text-slate-950 transition hover:bg-asap-purple hover:text-white"><CalendarCheck size={20} aria-hidden />Book Dash Cam Install</a><a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white"><Phone size={20} aria-hidden />Call {phoneDisplay}</a></div>;
 const Checks = ({ items }: { items: string[] }) => <ul className="grid gap-3 sm:grid-cols-2">{items.map(item => <li key={item} className="flex gap-2 font-bold"><CheckCircle2 className="mt-0.5 shrink-0 text-asap-cyan" size={20} aria-hidden />{item}</li>)}</ul>;
 
 export function DashCamPage({ service }: { service: ServiceContent }) {
