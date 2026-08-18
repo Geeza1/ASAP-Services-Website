@@ -45,6 +45,10 @@ export const footerServiceLinks = [
     slug: "electric-window-repairs"
   },
   {
+    title: "Dash Cam Installation",
+    slug: "dash-cam-installation"
+  },
+  {
     title: "General Auto Electrical Repairs",
     slug: "auto-electrical-diagnostics"
   },

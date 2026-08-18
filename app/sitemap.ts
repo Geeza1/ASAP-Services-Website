@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "alternator-repairs",
     "starter-motor-repairs",
     "electric-window-repairs",
+    "dash-cam-installation",
     "brake-controllers",
     "anderson-plugs",
     "lighting-repairs",

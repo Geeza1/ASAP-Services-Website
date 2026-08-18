@@ -253,7 +253,7 @@ try {
     {
       ok: false,
       message:
-        "We couldn't send your enquiry. Please try again or call 03 9870 2722.",
+        "We couldn't send your enquiry. Please try again or call 03 9872 2722.",
     },
     500,
   );
@@ -266,7 +266,7 @@ const acknowledgementText = [
   "",
   "We have received your enquiry and will get back to you as soon as possible during business hours.",
   "",
-  "For urgent assistance, please call our Ringwood workshop on 03 9870 2722.",
+  "For urgent assistance, please call our Ringwood workshop on 03 9872 2722.",
   "",
   "Regards,",
   "",
@@ -294,7 +294,7 @@ try {
 
       <p>
         For urgent assistance, please call our Ringwood workshop on
-        03 9870 2722.
+        03 9872 2722.
       </p>
 
       <p>
@@ -323,7 +323,7 @@ const acknowledgementResult = await transporter.sendMail({
     <p>Hi ${escapeHtml(name)},</p>
     <p>Thanks for contacting ASAP Auto Electrics.</p>
     <p>We have received your enquiry and will get back to you as soon as possible during business hours.</p>
-    <p>For urgent assistance, please call our Ringwood workshop on 03 9870 2722.</p>
+    <p>For urgent assistance, please call our Ringwood workshop on 03 9872 2722.</p>
     <p>
       Regards,<br><br>
       <strong>ASAP Auto Electrics</strong><br>

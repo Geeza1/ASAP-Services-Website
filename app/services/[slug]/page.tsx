@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ServicePlaceholder } from "../../../components/services/ServicePlaceholder";
 import { ServicePage as ServicePageLayout } from "../../../components/services/ServicePage";
+import { DashCamPage } from "../../../components/services/DashCamPage";
 import { getServiceBySlug, services } from "../../../lib/content/services";
 
 type ServicePageProps = {
@@ -52,6 +53,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
+  if (route.content && route.slug === "dash-cam-installation") return <DashCamPage service={route.content} />;
   if (route.content) return <ServicePageLayout service={route.content} />;
 
   return <ServicePlaceholder title={route.shortTitle} />;

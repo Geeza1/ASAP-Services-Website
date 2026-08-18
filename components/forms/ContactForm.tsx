@@ -14,7 +14,7 @@ type ContactFormProps = {
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 const successMessage = "Thanks for contacting ASAP Auto Electrics. We'll get back to you as soon as possible.";
-const errorMessage = "We couldn't send your enquiry. Please try again or call 03 9870 2722.";
+const errorMessage = "We couldn't send your enquiry. Please try again or call 03 9872 2722.";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validateFields(name: string, phone: string, email: string, vehicleIssue: string) {

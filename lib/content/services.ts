@@ -55,12 +55,49 @@ function createServiceContent(input: ServiceContentInput): ServiceContent {
   "/reference/images/light-workshop-placeholder.png",
     vehicles: ["Passenger vehicles", "4WDs",  "Vans and utes","Light commercial vehicles", "Trailers",  "Touring and accessory-equipped vehicles"],
     primaryCtaLabel: "Book Online",
-    secondaryCtaLabel: "Call 03 9870 2722",
+    secondaryCtaLabel: "Call 03 9872 2722",
     calendlyUrl
   };
 }
 
 export const services = [
+  {
+    slug: "dash-cam-installation",
+    shortTitle: "Dash Cam Installation",
+    homepageCardTitle: "Dash Cam Installation",
+    content: createServiceContent({
+      slug: "dash-cam-installation",
+      shortTitle: "Dash Cam Installation",
+      pageTitle: "Dash Cam Supply & Installation",
+      seoTitle: "Dash Cam Installation Ringwood | From $699 Supplied & Fitted | ASAP Auto Electrics",
+      metaDescription: "4K front + 1080P rear dash cam supplied and professionally hardwired from $699 at ASAP Auto Electrics Ringwood. Parking mode, Wi-Fi and 32GB card included.",
+      eyebrow: "4K front + 1080P rear package",
+      heroDescription: "Protect your vehicle with a professionally installed front and rear dash cam system, supplied and hardwired at our Ringwood workshop.",
+      heroImage: "/reference/images/2026/dash-cam2.jpg",
+      heroImageAlt: "Front and rear dash cam installation at ASAP Auto Electrics",
+      symptomsHeading: "What's included",
+      symptoms: [],
+      overviewHeading: "Professionally hardwired",
+      overviewParagraphs: [],
+      processHeading: "Dash cam features",
+      processSteps: [],
+      featuresHeading: "Why choose ASAP",
+      features: [],
+      faqs: [
+        { question: "Do you supply the dash cam?", answer: "Yes. The advertised package includes the front and rear dash cam system, hardwire kit and 32GB TF memory card." },
+        { question: "What resolution are the cameras?", answer: "The front camera records in 4K Ultra HD at 3840 × 2160 at 30FPS and the rear camera records in 1080P." },
+        { question: "Is the dash cam hardwired?", answer: "Yes. The package includes professional hardwired installation by an auto electrician." },
+        { question: "Does it have parking mode?", answer: "Yes. The system supports parking mode with impact detection when correctly hardwired. Parking-mode operation depends on the vehicle, battery condition and voltage-protection settings." },
+        { question: "Does it connect to my phone?", answer: "Yes. The supplied dash cam has Wi-Fi connectivity allowing compatible smartphones to access footage through the camera application." },
+        { question: "Is a memory card included?", answer: "Yes. A 32GB TF card is included and the camera supports cards up to 128GB." },
+        { question: "Will the wiring be hidden?", answer: "Wiring is concealed behind trim wherever practical to provide a clean professional installation." },
+        { question: "Can you install it in any vehicle?", answer: "The package suits many cars, SUVs, 4WDs, utes and light commercial vehicles. Some vehicles may require additional components or installation time." },
+        { question: "Is $699 the final price?", answer: "Installation starts from $699 supplied and fitted. Final price depends on the vehicle and installation requirements." },
+        { question: "Is installation mobile?", answer: "No. Dash cam installation is performed at the ASAP Auto Electrics workshop in Ringwood." }
+      ],
+      relatedServiceSlugs: ["auto-electrical-diagnostics", "battery-charging-system", "anderson-plugs"]
+    })
+  },
   {
     slug: "auto-electrical-diagnostics",
     shortTitle: "Auto Electrical Diagnostics",
@@ -139,7 +176,7 @@ export const services = [
         "lighting-repairs"
       ],
       primaryCtaLabel: "Book Electrical Diagnosis",
-      secondaryCtaLabel: "Call 03 9870 2722",
+      secondaryCtaLabel: "Call 03 9872 2722",
       calendlyUrl
     }
   },
@@ -334,7 +371,7 @@ export const services = [
         { question: "Can you inspect an existing installation?", answer: "Yes. We can inspect accessible cable, protection, terminations, polarity and voltage performance at our workshop." },
         { question: "What causes low voltage at the caravan?", answer: "Common causes include long or undersized cable, poor connections, inadequate earths, charging-system behaviour and load on the circuit." }
       ],
-      relatedServiceSlugs: ["brake-controllers", "trailer-wiring", "caravan-auto-electrics", "battery-charging-system", "lighting-repairs"]
+      relatedServiceSlugs: ["brake-controllers", "trailer-wiring", "caravan-auto-electrics", "battery-charging-system", "dash-cam-installation"]
     })
   },
   {

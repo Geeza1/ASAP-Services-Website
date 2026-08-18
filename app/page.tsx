@@ -17,7 +17,7 @@ import { SiteFooter } from "../components/layout/SiteFooter";
 import { SiteHeader } from "../components/layout/SiteHeader";
 import { getServicePath, getServiceRouteByHomepageCardTitle } from "../lib/content/serviceRoutes";
 
-const primaryPhone = "03 9870 2722";
+const primaryPhone = "03 9872 2722";
 
 const problemList = [
   "Battery Light On",
@@ -58,6 +58,12 @@ const services = [
     description:
       "Electric window faults, window switches, window regulators and window motors repairs handled by experienced auto electrical technicians.",
     icon: Zap
+  },
+  {
+    title: "Dash Cam Installation",
+    description:
+      "4K front + 1080P rear dash cam supplied and professionally hardwired from $699. Parking mode and Wi-Fi included.",
+    icon: Car
   }
 ];
 const workshopAddress = "Unit 3/3 Oban Rd, Ringwood VIC 3134";
@@ -106,7 +112,7 @@ export default function Home() {
                 <CalendarCheck aria-hidden size={20} />
                 Book Electrical Diagnosis
               </a>
-              <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white">
+              <a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white">
                 <Phone aria-hidden size={20} />
                 {primaryPhone}
               </a>
@@ -161,7 +167,7 @@ export default function Home() {
               Whether the car will not start, a warning light is on, or accessories need fitting, the goal is simple: find the fault properly and give you a clear repair path.
             </p>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
             {services.map((service) => {
               const Icon = service.icon;
               const route = getServiceRouteByHomepageCardTitle(service.title);
@@ -290,7 +296,7 @@ export default function Home() {
               Tell us what is happening with the vehicle and we will guide you toward the right workshop booking.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple px-6 font-black text-white">
+              <a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple px-6 font-black text-white">
                 <Phone aria-hidden size={20} />
                 Call {primaryPhone}
               </a>
@@ -313,7 +319,7 @@ export default function Home() {
       <SiteFooter />
 
       <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 border-t border-slate-200 bg-white/96 p-3 shadow-[0_-8px_28px_rgba(15,23,42,0.12)] backdrop-blur md:hidden">
-        <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple font-black text-white">
+        <a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple font-black text-white">
           <Phone aria-hidden size={18} />
           Call Now
         </a>

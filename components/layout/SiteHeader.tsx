@@ -5,13 +5,14 @@ import Link from "next/link";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useRef, useState } from "react";
 
-const primaryPhone = "03 9870 2722";
+const primaryPhone = "03 9872 2722";
 
 const serviceLinks = [
   { label: "Auto Electrical Diagnostics", href: "/services/auto-electrical-diagnostics" },
   { label: "Alternator Repairs", href: "/services/alternator-repairs" },
   { label: "Starter Motor Repairs", href: "/services/starter-motor-repairs" },
   { label: "Electric Window Repairs", href: "/services/electric-window-repairs" },
+  { label: "Dash Cam Installation", href: "/services/dash-cam-installation" },
   { label: "Brake Controller Installation", href: "/services/brake-controllers" },
   { label: "Anderson Plug Installation", href: "/services/anderson-plugs" },
   { label: "Vehicle Lighting Repairs", href: "/services/lighting-repairs" },
@@ -131,7 +132,7 @@ export function SiteHeader() {
             {mobileMenuOpen ? <X aria-hidden size={24} /> : <Menu aria-hidden size={24} />}
           </button>
           <a
-            href="tel:0398702722"
+            href="tel:0398722722"
             className="inline-flex h-[46px] shrink-0 items-center gap-2 rounded-full bg-asap-purple px-4 text-sm font-black text-white shadow-sm transition hover:bg-asap-cyan hover:text-slate-950 md:px-6"
             aria-label={`Call ASAP Auto Electrics on ${primaryPhone}`}
           >
