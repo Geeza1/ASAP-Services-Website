@@ -52,15 +52,74 @@ function createServiceContent(input: ServiceContentInput): ServiceContent {
     // TODO: Replace the approved workshop placeholder with a real photograph of this specific service.
     heroImage:
   input.heroImage ??
-  "/reference/images/light-workshop-placeholder.png",
+  "/reference/images/various/our-work-aircon-testing.jpg",
     vehicles: ["Passenger vehicles", "4WDs",  "Vans and utes","Light commercial vehicles", "Trailers",  "Touring and accessory-equipped vehicles"],
-    primaryCtaLabel: "Book Online",
+    primaryCtaLabel: "Book Air Conditioning Service",
     secondaryCtaLabel: "Call 03 9872 2722",
     calendlyUrl
   };
 }
 
 export const services = [
+  {
+    slug: "car-air-conditioning",
+    shortTitle: "Car Air Conditioning",
+    content: createServiceContent({
+      slug: "car-air-conditioning",
+      shortTitle: "Car Air Conditioning",
+      pageTitle: "Car Air Conditioning Not Cooling? Get It Checked Properly",
+      seoTitle: "Car Air Conditioning Service Ringwood | ASAP Auto Electrics",
+      metaDescription: "Professional car air conditioning diagnosis, servicing and repairs from ASAP Auto Electrics in Ringwood.",
+      eyebrow: "Car Air Conditioning",
+      heroDescription: "Professional car air conditioning diagnosis, servicing and repairs from ASAP Auto Electrics in Ringwood.",
+      heroImageAlt: "Vehicle air conditioning diagnosis and service at ASAP Auto Electrics Ringwood",
+      symptomsHeading: "Vehicle Air Conditioning Symptoms",
+      symptoms: [
+        "Air conditioning not cold",
+        "Cooling comes and goes",
+        "Airflow is weak",
+        "A/C takes too long to cool",
+        "Unusual noises when A/C is running",
+        "A/C stops cooling in traffic"
+      ],
+      overviewHeading: "Car Air Conditioning Diagnosis & Service",
+      overviewParagraphs: [
+        "If your vehicle's air conditioning is not cooling properly, we can test the system and identify the cause.",
+        "ASAP Auto Electrics provides vehicle air conditioning diagnosis, servicing and repairs from our fully equipped Ringwood workshop."
+      ],
+      processHeading: "Vehicle Air Conditioning Service",
+      processSteps: [
+        { title: "Check the system", description: "We inspect the vehicle's air conditioning system and confirm how it is operating." },
+        { title: "Test performance", description: "We check cooling performance, ac pressures and electrical operation." },
+        { title: "Identify the fault", description: "If the ac system is not operating correctly, we locate the cause." },
+        { title: "Service or repair", description: "We carry out the required air conditioning service or repair." }
+      ],
+      featuresHeading: "Car Air Conditioning Services",
+      features: [
+        "Air conditioning fault diagnosis",
+        "A/C performance testing",
+        "Refrigerant system re-gassing",
+        "Refrigerant leak detection",
+        "AC Compressor replacement",
+        "AC Electrical diagnosis",
+        "Cooling fan faults",
+        "Climate controls testing & repair"
+      ],
+      faqs: [
+        { question: "Why isn't my car air conditioning cold?", answer: "There are several possible causes, including low refrigerant, leaks, compressor faults, electrical faults, cooling fan problems or control-system issues. We can test the system and identify the cause." },
+        { question: "Can you diagnose air conditioning electrical faults?", answer: "Yes. As auto electricians, we can diagnose electrical and control faults affecting vehicle air conditioning systems as well as the refrigeration system." },
+        { question: "Do you repair air conditioning systems?", answer: "Yes. We diagnose, service and repair vehicle air conditioning systems from our Ringwood workshop." },
+        { question: "Can I book my car in if the A/C only works sometimes?", answer: "Yes. Intermittent cooling is a common reason for testing the system and its electrical controls." },
+        { question: "Where are you located?", answer: "ASAP Auto Electrics is a workshop-based auto electrical business at Unit 3/3 Oban Road, Ringwood VIC 3134." }
+      ],
+      relatedServiceSlugs: [
+        "auto-electrical-diagnostics",
+        "battery-charging-system",
+        "lighting-repairs",
+        "electric-window-repairs"
+      ]
+    })
+  },
   {
     slug: "dash-cam-installation",
     shortTitle: "Dash Cam Installation",
@@ -322,8 +381,8 @@ export const services = [
         { title: "Test trailer-brake operation", description: "We test controller response and available brake output." },
         { title: "Explain adjustment", description: "We show how controller adjustment and manual operation work." }
       ],
-      featuresHeading: "Professional towing brake electrical work",
-      features: ["Brake controller installation", "Wiring diagnosis", "Protected power supply", "Trailer socket checks", "Brake-output testing", "Neat mounting", "Setup guidance", "Fault diagnosis for existing systems"],
+      featuresHeading: "Professional electric brake installation & work",
+      features: ["Brake controller installation", "Towing wiring diagnosis", "Protected power supply", "Trailer socket checks", "Electric brake-output testing", "Secure brake controller mounting", "Setup guidance", "Fault diagnosis for existing systems"],
       faqs: [
         { question: "Which brake controller is best for my vehicle?", answer: "The Redarc Towpro Elite is a popular choice, but it can depend on the vehicle, trailer brakes, towing use and compatibility requirements. Contact us with both vehicle and trailer details so we can discuss suitable options." },
         { question: "Do electric trailer brakes need a controller?", answer: "Electric trailer brakes require a compatible means of controlling brake output. Legal and towing requirements depend on the trailer and jurisdiction, so confirm the requirements for your combination." },

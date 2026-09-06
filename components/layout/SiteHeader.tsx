@@ -10,13 +10,14 @@ const primaryPhone = "03 9872 2722";
 const serviceLinks = [
   { label: "Auto Electrical Diagnostics", href: "/services/auto-electrical-diagnostics" },
   { label: "Alternator Repairs", href: "/services/alternator-repairs" },
-  { label: "Starter Motor Repairs", href: "/services/starter-motor-repairs" },
-  { label: "Electric Window Repairs", href: "/services/electric-window-repairs" },
-  { label: "Dash Cam Installation", href: "/services/dash-cam-installation" },
-  { label: "Brake Controller Installation", href: "/services/brake-controllers" },
-  { label: "Anderson Plug Installation", href: "/services/anderson-plugs" },
-  { label: "Vehicle Lighting Repairs", href: "/services/lighting-repairs" },
   { label: "Battery & Charging Systems", href: "/services/battery-charging-system" },
+  { label: "Brake Controller Installation", href: "/services/brake-controllers" },
+  { label: "Car Air Conditioning", href: "/services/car-air-conditioning" },
+  { label: "Anderson Plug Installation", href: "/services/anderson-plugs" },
+  { label: "Dash Cam Installation", href: "/services/dash-cam-installation" },
+  { label: "Electric Window Repairs", href: "/services/electric-window-repairs" },
+  { label: "Starter Motor Repairs", href: "/services/starter-motor-repairs" },
+  { label: "Vehicle Lighting Repairs", href: "/services/lighting-repairs" },
   { label: "Trailer Wiring", href: "/services/trailer-wiring" }
 ];
 

@@ -6,13 +6,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const serviceSlugs = [
     "auto-electrical-diagnostics",
     "alternator-repairs",
-    "starter-motor-repairs",
-    "electric-window-repairs",
-    "dash-cam-installation",
+    "battery-charging-system",
     "brake-controllers",
+    "car-air-conditioning",
+    "dash-cam-installation",
+    "electric-window-repairs",
     "anderson-plugs",
     "lighting-repairs",
-    "battery-charging-system",
+    "starter-motor-repairs",
     "trailer-wiring",
   ];
 
