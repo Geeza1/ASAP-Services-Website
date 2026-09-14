@@ -6,7 +6,7 @@ import { ContactForm } from "../forms/ContactForm";
 import { SiteFooter } from "../layout/SiteFooter";
 import { SiteHeader } from "../layout/SiteHeader";
 
-const phoneDisplay = "03 9872 2722";
+const phoneDisplay = "03 9870 2722";
 const bookingUrl = "https://calendly.com/asapautoelectrics/dash-cam-installation";
 const included = ["4K Ultra HD front dash camera", "1080P rear dash camera", "Front and rear simultaneous recording", "Parking mode with impact detection", "Wi-Fi smartphone connectivity", "Hardwire installation kit", "32GB TF memory card included", "Support for TF cards up to 128GB", "Professional concealed wiring", "Installation by an auto electrician", "Testing and setup before vehicle handover"];
 type DashCamFeature = { title: string; icon: typeof Camera; copy: string; image?: string; imageAlt?: string };

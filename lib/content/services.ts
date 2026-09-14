@@ -55,7 +55,7 @@ function createServiceContent(input: ServiceContentInput): ServiceContent {
   "/reference/images/various/our-work-aircon-testing.jpg",
     vehicles: ["Passenger vehicles", "4WDs",  "Vans and utes","Light commercial vehicles", "Trailers",  "Touring and accessory-equipped vehicles"],
     primaryCtaLabel: "Book Air Conditioning Service",
-    secondaryCtaLabel: "Call 03 9872 2722",
+    secondaryCtaLabel: "Call 03 9870 2722",
     calendlyUrl
   };
 }
@@ -235,7 +235,7 @@ export const services = [
         "lighting-repairs"
       ],
       primaryCtaLabel: "Book Electrical Diagnosis",
-      secondaryCtaLabel: "Call 03 9872 2722",
+      secondaryCtaLabel: "Call 03 9870 2722",
       calendlyUrl
     }
   },

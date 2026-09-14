@@ -17,7 +17,7 @@ import { SiteFooter } from "../components/layout/SiteFooter";
 import { SiteHeader } from "../components/layout/SiteHeader";
 import { getServicePath, getServiceRouteByHomepageCardTitle } from "../lib/content/serviceRoutes";
 
-const primaryPhone = "03 9872 2722";
+const primaryPhone = "03 9870 2722";
 
 const problemList = [
   "Battery Light On",

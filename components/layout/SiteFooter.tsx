@@ -3,7 +3,7 @@ import Link from "next/link";
 import { footerServiceLinks, getServicePath } from "../../lib/content/serviceRoutes";
 
 const contactEmail = "info@asapauto.com.au";
-const phoneDisplay = "03 9872 2722";
+const phoneDisplay = "03 9870 2722";
 const phoneHref = "tel:0398702722";
 const workshopAddress = "Unit 3/3 Oban Rd, Ringwood VIC 3134";
 const encodedWorkshopAddress = encodeURIComponent(workshopAddress);

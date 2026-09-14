@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useRef, useState } from "react";
 
-const primaryPhone = "03 9872 2722";
+const primaryPhone = "03 9870 2722";
 
 const serviceLinks = [
   { label: "Auto Electrical Diagnostics", href: "/services/auto-electrical-diagnostics" },
