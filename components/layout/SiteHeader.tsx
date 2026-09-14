@@ -133,7 +133,7 @@ export function SiteHeader() {
             {mobileMenuOpen ? <X aria-hidden size={24} /> : <Menu aria-hidden size={24} />}
           </button>
           <a
-            href="tel:0398722722"
+            href="tel:0398702722"
             className="inline-flex h-[46px] shrink-0 items-center gap-2 rounded-full bg-asap-purple px-4 text-sm font-black text-white shadow-sm transition hover:bg-asap-cyan hover:text-slate-950 md:px-6"
             aria-label={`Call ASAP Auto Electrics on ${primaryPhone}`}
           >

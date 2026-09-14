@@ -112,7 +112,7 @@ export default function Home() {
                 <CalendarCheck aria-hidden size={20} />
                 Book Electrical Diagnosis
               </a>
-              <a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white">
+              <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-asap-purple px-6 font-black text-asap-purple transition hover:bg-asap-purple hover:text-white">
                 <Phone aria-hidden size={20} />
                 {primaryPhone}
               </a>
@@ -296,7 +296,7 @@ export default function Home() {
               Tell us what is happening with the vehicle and we will guide you toward the right workshop booking.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple px-6 font-black text-white">
+              <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple px-6 font-black text-white">
                 <Phone aria-hidden size={20} />
                 Call {primaryPhone}
               </a>
@@ -319,7 +319,7 @@ export default function Home() {
       <SiteFooter />
 
       <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 border-t border-slate-200 bg-white/96 p-3 shadow-[0_-8px_28px_rgba(15,23,42,0.12)] backdrop-blur md:hidden">
-        <a href="tel:0398722722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple font-black text-white">
+        <a href="tel:0398702722" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-asap-purple font-black text-white">
           <Phone aria-hidden size={18} />
           Call Now
         </a>
