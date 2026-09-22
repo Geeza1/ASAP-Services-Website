@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.asapauto.com.au/sitemap.xml",
-    host: "https://www.asapauto.com.au",
+    sitemap: "https://www.asapautoelectrics.com.au/sitemap.xml",
+    host: "https://www.asapautoelectrics.com.au",
   };
 }

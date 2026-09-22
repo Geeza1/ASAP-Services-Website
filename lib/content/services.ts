@@ -44,7 +44,11 @@ export type ServiceRoute = {
 
 const calendlyUrl = "https://calendly.com/asapautoelectrics/auto-electrical-repair";
 
-type ServiceContentInput = Omit<ServiceContent, "heroImage" | "vehicles" | "primaryCtaLabel" | "secondaryCtaLabel" | "calendlyUrl"> & {heroImage?:string};
+type ServiceContentInput = Omit<ServiceContent, "heroImage" | "vehicles" | "calendlyUrl"> & {
+  heroImage?: string;
+  primaryCtaLabel: string;
+  secondaryCtaLabel?: string;
+};
 
 function createServiceContent(input: ServiceContentInput): ServiceContent {
   return {
@@ -54,8 +58,7 @@ function createServiceContent(input: ServiceContentInput): ServiceContent {
   input.heroImage ??
   "/reference/images/various/our-work-aircon-testing.jpg",
     vehicles: ["Passenger vehicles", "4WDs",  "Vans and utes","Light commercial vehicles", "Trailers",  "Touring and accessory-equipped vehicles"],
-    primaryCtaLabel: "Book Air Conditioning Service",
-    secondaryCtaLabel: "Call 03 9870 2722",
+    secondaryCtaLabel: input.secondaryCtaLabel ?? "Call 03 9870 2722",
     calendlyUrl
   };
 }
@@ -117,7 +120,9 @@ export const services = [
         "battery-charging-system",
         "lighting-repairs",
         "electric-window-repairs"
-      ]
+      ],
+      primaryCtaLabel: "Book Air Conditioning Service",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -154,7 +159,9 @@ export const services = [
         { question: "Is $699 the final price?", answer: "Installation starts from $699 supplied and fitted. Final price depends on the vehicle and installation requirements." },
         { question: "Is installation mobile?", answer: "No. Dash cam installation is performed at the ASAP Auto Electrics workshop in Ringwood." }
       ],
-      relatedServiceSlugs: ["auto-electrical-diagnostics", "battery-charging-system", "anderson-plugs"]
+      relatedServiceSlugs: ["auto-electrical-diagnostics", "battery-charging-system", "anderson-plugs"],
+      primaryCtaLabel: "Book Dash Cam Install",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -275,7 +282,9 @@ export const services = [
         { question: "How long does alternator diagnosis take?", answer: "Testing time depends on the vehicle, accessibility and whether the fault is constant or intermittent. We cannot promise a turnaround before inspecting the vehicle." },
         { question: "Do you repair or replace alternators?", answer: "The recommendation depends on alternator type, condition and parts availability. We explain suitable repair or replacement options after testing." }
       ],
-      relatedServiceSlugs: ["battery-charging-system", "starter-motor-repairs", "auto-electrical-diagnostics", "lighting-repairs", "trailer-wiring"]
+      relatedServiceSlugs: ["battery-charging-system", "starter-motor-repairs", "auto-electrical-diagnostics", "lighting-repairs", "trailer-wiring"],
+      primaryCtaLabel: "Book Alternator Repair",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -314,7 +323,9 @@ export const services = [
         { question: "Can I drive with a failing starter motor?", answer: "The vehicle may continue running once started, but it may not restart after being switched off. Arrange testing before the fault leaves you stranded." },
         { question: "Do you repair starter motors or replace them?", answer: "That depends on starter design, condition and parts availability. We explain suitable options after the starting system has been tested." }
       ],
-      relatedServiceSlugs: ["battery-charging-system", "alternator-repairs", "auto-electrical-diagnostics", "electric-window-repairs", "lighting-repairs"]
+      relatedServiceSlugs: ["battery-charging-system", "alternator-repairs", "auto-electrical-diagnostics", "electric-window-repairs", "lighting-repairs"],
+      primaryCtaLabel: "Book Starter Motor Repair",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -354,7 +365,9 @@ export const services = [
         { question: "Can you repair only one window?", answer: "Yes. We can assess an individual affected window, without replacing components in other windows" },
         { question: "Do you need to remove the door trim?", answer: "Many motor and regulator checks require careful door-trim removal. We first confirm the symptoms and perform accessible electrical checks." }
       ],
-      relatedServiceSlugs: ["auto-electrical-diagnostics", "lighting-repairs", "starter-motor-repairs", "battery-charging-system", "brake-controllers"]
+      relatedServiceSlugs: ["auto-electrical-diagnostics", "lighting-repairs", "starter-motor-repairs", "battery-charging-system", "brake-controllers"],
+      primaryCtaLabel: "Book Electric Window Repair",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -392,7 +405,9 @@ export const services = [
         { question: "How should a brake controller be adjusted?", answer: "Adjustment depends on trailer load, brake condition and controller design. Follow the controller instructions and set it so braking is balanced without locking." },
         { question: "Do you install controllers for caravans and trailers?", answer: "Yes, for suitable towing vehicles and compatible electric-brake systems. Provide the tow vehicle and trailer or caravan details before booking." }
       ],
-      relatedServiceSlugs: ["trailer-wiring", "anderson-plugs", "caravan-auto-electrics", "auto-electrical-diagnostics", "battery-charging-system"]
+      relatedServiceSlugs: ["trailer-wiring", "anderson-plugs", "caravan-auto-electrics", "auto-electrical-diagnostics", "battery-charging-system"],
+      primaryCtaLabel: "Book Brake Controller Install",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -430,7 +445,9 @@ export const services = [
         { question: "Can you inspect an existing installation?", answer: "Yes. We can inspect accessible cable, protection, terminations, polarity and voltage performance at our workshop." },
         { question: "What causes low voltage at the caravan?", answer: "Common causes include long or undersized cable, poor connections, inadequate earths, charging-system behaviour and load on the circuit." }
       ],
-      relatedServiceSlugs: ["brake-controllers", "trailer-wiring", "caravan-auto-electrics", "battery-charging-system", "dash-cam-installation"]
+      relatedServiceSlugs: ["brake-controllers", "trailer-wiring", "caravan-auto-electrics", "battery-charging-system", "dash-cam-installation"],
+      primaryCtaLabel: "Book Anderson Plug Install",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -468,7 +485,9 @@ export const services = [
         { question: "Why are my headlights dim?", answer: "Some vehicle headlight are a function of design and style but do not produce good light output. Possible causes include aged lamps, voltage drop, poor earths, damaged reflectors, charging voltage or lens condition." },
         { question: "Can you diagnose intermittent lighting faults?", answer: "Yes, although faults that are not present during inspection may require additional time. Note when vibration, weather or other controls affect the symptom." }
       ],
-      relatedServiceSlugs: ["auto-electrical-diagnostics", "trailer-wiring", "battery-charging-system", "alternator-repairs", "anderson-plugs"]
+      relatedServiceSlugs: ["auto-electrical-diagnostics", "trailer-wiring", "battery-charging-system", "alternator-repairs", "anderson-plugs"],
+      primaryCtaLabel: "Book Lighting Repair",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -506,7 +525,9 @@ export const services = [
         { question: "How long should a car battery last?", answer: "Our batteries come with a 3 year warranty. Battery life varies with type, heat, vehicle use, charging conditions and electrical load, 3 to 7 years is typical. Condition testing is more useful than relying on age alone." },
         { question: "Should I replace the battery before testing the alternator?", answer: "Testing the battery and charging system together is preferable unless the battery has already been conclusively assessed as unsafe or failed." }
       ],
-      relatedServiceSlugs: ["alternator-repairs", "starter-motor-repairs", "auto-electrical-diagnostics", "lighting-repairs", "caravan-auto-electrics"]
+      relatedServiceSlugs: ["alternator-repairs", "starter-motor-repairs", "auto-electrical-diagnostics", "lighting-repairs"],
+      primaryCtaLabel: "Book Battery & Charging Test",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   },
   {
@@ -542,45 +563,9 @@ export const services = [
         { question: "Do you repair electric-brake wiring?", answer: "Yes, we diagnose and repair accessible vehicle-side brake-output wiring and connections. Trailer mechanical brake faults may need a specialist." },
         { question: "Can you test both the car and trailer?", answer: "Yes, when both are brought to the Ringwood workshop and the relevant circuits are accessible." }
       ],
-      relatedServiceSlugs: ["brake-controllers", "anderson-plugs", "caravan-auto-electrics", "lighting-repairs", "auto-electrical-diagnostics"]
-    })
-  },
-  {
-    slug: "caravan-towing-auto-electrics", shortTitle: "Caravan Towing Auto Electrics",
-    content: createServiceContent({
-      slug: "caravan-towing-auto-electrics", shortTitle: "Caravan Towing Auto Electrics", pageTitle: "Caravan Towing Auto Electrics in Ringwood",
-      seoTitle: "Caravan Towing Auto Electrics Ringwood | ASAP Auto Electrics",
-      metaDescription: "Vehicle-side and accessible caravan electrical work at our Ringwood workshop, including charging circuits, Anderson plugs and towing wiring.",
-      eyebrow: "Caravan Towing Auto Electrics", heroDescription: "Vehicle-side and accessible caravan electrical diagnosis, towing wiring, charging circuits, Anderson plugs and brake-controller systems.",
-      heroImage:"/reference/images/2026/asap_caravan_towing_electrics_installation1.jpg",
-      heroImageAlt: "ASAP Auto Electrics Ringwood workshop for accessible caravan and tow-vehicle electrical work",
-      symptomsHeading: "Caravan and tow-vehicle electrical needs",
-      symptoms: ["Caravan battery is not charging while driving", "Anderson plug has no power", "Fridge circuit is not operating", "Electric brakes are inconsistent", "Trailer lights are faulty", "Charging voltage is low", "Existing wiring needs inspection", "Tow vehicle needs upgrades", "Caravan connection is intermittent"],
-      overviewHeading: "Check the towing vehicle, connection and charging circuit",
-      overviewParagraphs: ["A caravan charging or connection fault can involve the tow vehicle, cable sizing, plugs, voltage drop, brake controller, trailer wiring or caravan battery-management equipment. The complete arrangement needs to be understood before parts are recommended.", "We work on vehicle-side and accessible caravan electrical systems at our Ringwood workshop. Capability depends on the caravan system, physical access and type of repair, so contact us before booking substantial caravan work.", "Where work involves internal 240-volt systems, appliances, inaccessible caravan construction or specialist equipment, we may recommend an appropriately qualified caravan specialist."],
-      processHeading: "Our caravan electrical assessment process",
-      processSteps: [
-        { title: "Discuss the complete setup", description: "We review the caravan, tow vehicle, batteries, charging equipment and symptoms." },
-        { title: "Confirm accessible systems", description: "We establish which vehicle and caravan circuits are within workshop scope." },
-        { title: "Inspect vehicle-side wiring", description: "We check accessible supply, protection, cable and earth arrangements." },
-        { title: "Inspect plugs and sockets", description: "We assess towing connectors for damage, heat and poor contacts." },
-        { title: "Test charging voltage", description: "We measure available voltage through the relevant connection." },
-        { title: "Test brake and lighting circuits", description: "We check controller output and towing-light functions where applicable." },
-        { title: "Explain repair scope", description: "We separate accessible workshop work from specialist caravan work." },
-        { title: "Complete and retest approved work", description: "We perform approved accessible repairs and confirm operation." }
-      ],
-      featuresHeading: "Tow-vehicle and accessible caravan electrical work",
-      features: ["Anderson plug diagnosis", "Vehicle charging circuits", "Brake-controller systems", "Trailer plug and lighting repairs", "Voltage-drop testing", "Auxiliary power circuits", "Towing wiring inspection", "Advice on further specialist caravan work where required"],
-      faqs: [
-        { question: "Do you work on all caravan electrical systems?", answer: "No. We handle vehicle-side and accessible caravan auto electrical circuits. Capability depends on the system, access and repair type; contact us before substantial caravan work." },
-        { question: "Can you diagnose why the caravan battery is not charging?", answer: "We can test accessible vehicle supply, plugs, cable voltage drop and relevant charging connections. Internal charger or battery-management faults may require a caravan specialist." },
-        { question: "Can you repair Anderson plug wiring?", answer: "Yes, we can inspect and repair suitable accessible Anderson plug circuits, cable protection and connections." },
-        { question: "Do you install brake controllers for caravans?", answer: "Yes, for suitable tow vehicles and compatible electric-brake systems. Vehicle and caravan details are needed before booking." },
-        { question: "Can you repair caravan lighting connections?", answer: "We can diagnose and repair accessible towing plugs, sockets and lighting connections. Internal or inaccessible caravan wiring may be outside scope." },
-        { question: "Should I bring both the caravan and tow vehicle?", answer: "Usually yes. Having both allows the connection and interaction between the two to be tested. Confirm access and workshop arrangements with us first." },
-        { question: "When should I use a caravan specialist instead?", answer: "Use an appropriately qualified specialist for internal 240-volt work, appliances, structural access or caravan systems outside automotive electrical scope. We will explain when referral is appropriate." }
-      ],
-      relatedServiceSlugs: ["anderson-plugs", "brake-controllers", "trailer-wiring", "battery-charging-system", "auto-electrical-diagnostics"]
+      relatedServiceSlugs: ["brake-controllers", "anderson-plugs", "lighting-repairs", "auto-electrical-diagnostics"],
+      primaryCtaLabel: "Book Trailer Wiring Service",
+      secondaryCtaLabel: "Call 03 9870 2722"
     })
   }
 ] satisfies ServiceRoute[];

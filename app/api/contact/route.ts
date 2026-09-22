@@ -272,7 +272,7 @@ const acknowledgementText = [
   "",
   "ASAP Auto Electrics",
   "Ringwood Auto Electrical Workshop",
-  "https://asapauto.com.au",
+  "https://www.asapautoelectrics.com.au",
 ].join("\n");
 
 try {
@@ -301,7 +301,7 @@ try {
         Regards,<br><br>
         <strong>ASAP Auto Electrics</strong><br>
         Ringwood Auto Electrical Workshop<br>
-        <a href="https://asapauto.com.au">asapauto.com.au</a>
+        <a href="https://www.asapautoelectrics.com.au">www.asapautoelectrics.com.au</a>
       </p>
     `,
   });
@@ -328,7 +328,7 @@ const acknowledgementResult = await transporter.sendMail({
       Regards,<br><br>
       <strong>ASAP Auto Electrics</strong><br>
       Ringwood Auto Electrical Workshop<br>
-      <a href="https://asapauto.com.au">asapauto.com.au</a>
+      <a href="https://www.asapautoelectrics.com.au">www.asapautoelectrics.com.au</a>
     </p>
   `,
 });
