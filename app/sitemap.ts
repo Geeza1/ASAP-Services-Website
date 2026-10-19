@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "battery-charging-system",
     "brake-controllers",
     "car-air-conditioning",
+    "car-aircon-regas",
     "dash-cam-installation",
     "electric-window-repairs",
     "anderson-plugs",

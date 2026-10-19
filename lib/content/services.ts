@@ -33,6 +33,11 @@ export type ServiceContent = {
   primaryCtaLabel: string;
   secondaryCtaLabel: string;
   calendlyUrl: string;
+  areaServed?: string;
+  offerPrice?: string;
+  offerDescription?: string;
+  ctaHeading?: string;
+  ctaDescription?: string;
 };
 
 export type ServiceRoute = {
@@ -46,20 +51,24 @@ const calendlyUrl = "https://calendly.com/asapautoelectrics/auto-electrical-repa
 
 type ServiceContentInput = Omit<ServiceContent, "heroImage" | "vehicles" | "calendlyUrl"> & {
   heroImage?: string;
+  vehicles?: string[];
+  calendlyUrl?: string;
   primaryCtaLabel: string;
   secondaryCtaLabel?: string;
 };
 
 function createServiceContent(input: ServiceContentInput): ServiceContent {
+  const defaultVehicles = ["Passenger vehicles", "4WDs", "Vans and utes", "Light commercial vehicles", "Trailers", "Touring and accessory-equipped vehicles"];
+
   return {
     ...input,
     // TODO: Replace the approved workshop placeholder with a real photograph of this specific service.
     heroImage:
   input.heroImage ??
   "/reference/images/various/our-work-aircon-testing.jpg",
-    vehicles: ["Passenger vehicles", "4WDs",  "Vans and utes","Light commercial vehicles", "Trailers",  "Touring and accessory-equipped vehicles"],
+    vehicles: input.vehicles ?? defaultVehicles,
     secondaryCtaLabel: input.secondaryCtaLabel ?? "Call 03 9870 2722",
-    calendlyUrl
+    calendlyUrl: input.calendlyUrl ?? calendlyUrl
   };
 }
 
@@ -87,8 +96,9 @@ export const services = [
       ],
       overviewHeading: "Car Air Conditioning Diagnosis & Service",
       overviewParagraphs: [
-        "If your vehicle's air conditioning is not cooling properly, we can test the system and identify the cause.",
-        "ASAP Auto Electrics provides vehicle air conditioning diagnosis, servicing and repairs from our fully equipped Ringwood workshop."
+        "If your vehicle's air conditioning is not cooling properly, we can test the full system and identify the real cause.",
+        "Based on our workshop experience at ASAP, roughly 25–30% of air conditioning faults we see involve electrical or control issues rather than low refrigerant.",
+        "Our diagnostic capability covers refrigeration faults and system pressures, electronic climate-control systems, variable-displacement compressor control valves, air distribution faults, blend doors and vent actuators, cooling fan, sensor, wiring and compressor activation issues."
       ],
       processHeading: "Vehicle Air Conditioning Service",
       processSteps: [
@@ -119,10 +129,81 @@ export const services = [
         "auto-electrical-diagnostics",
         "battery-charging-system",
         "lighting-repairs",
-        "electric-window-repairs"
+        "electric-window-repairs",
+        "car-aircon-regas"
       ],
-      primaryCtaLabel: "Book Air Conditioning Service",
-      secondaryCtaLabel: "Call 03 9870 2722"
+      primaryCtaLabel: "Book Aircon Diagnosis & Repairs",
+      secondaryCtaLabel: "Call 03 9870 2722",
+      ctaHeading: "Book Your Car Air Conditioning Diagnosis",
+      calendlyUrl: "https://calendly.com/asapautoelectrics/auto-air-conditioning"
+    })
+  },
+  {
+    slug: "car-aircon-regas",
+    shortTitle: "Car Aircon Regas & Servicing",
+    content: createServiceContent({
+      slug: "car-aircon-regas",
+      shortTitle: "Car Aircon Regas & Servicing",
+      pageTitle: "Car Aircon Regas & Servicing in Ringwood",
+      seoTitle: "Car Aircon Regas Ringwood – $239 | ASAP Auto Electrics",
+      metaDescription: "Car aircon regas in Ringwood for $239 inc GST for standard R134a systems. Professional A/C servicing at ASAP Auto Electrics. Other systems quoted separately.",
+      eyebrow: "CAR AIR CONDITIONING SERVICE · RINGWOOD",
+      heroDescription: "Is your car air conditioning not cooling as well as it should? ASAP Auto Electrics provides professional car air conditioning regassing and servicing at our Ringwood workshop. Have your A/C system checked and serviced by experienced auto electricians.",
+      heroImageAlt: "Car air conditioning regas and service at ASAP Auto Electrics Ringwood",
+      symptomsHeading: "Signs Your Car Air Conditioning Needs Attention",
+      symptoms: [
+        "Aircon blowing warm air",
+        "Cooling not as cold as before",
+        "Aircon working intermittently",
+        "Poor cooling when stationary"
+      ],
+      overviewHeading: "More Than Just a Regas",
+      overviewParagraphs: [
+        "At ASAP Auto Electrics, we check your air conditioning system to help identify why it's not cooling properly. If we find a refrigeration, electrical or control-system fault during servicing, we'll explain what we've found and recommend the next step."
+      ],
+      processHeading: "What's Included in Your $239 Aircon Regas?",
+      processSteps: [
+        { title: "Initial A/C system and cooling check", description: "We check the system's operation and cooling performance before servicing." },
+        { title: "Nitrogen pressure and leak testing", description: "We pressure-test the system with nitrogen to check for leaks." },
+        { title: "Correct R134a recharge", description: "Includes refrigerant oil and fluorescent dye when required." },
+        { title: "Final cooling performance check", description: "We confirm the system's cooling performance after servicing." }
+      ],
+      featuresHeading: "Car Aircon Regas — $239 inc GST",
+      features: [
+        "Initial A/C system and cooling performance check",
+        "Nitrogen pressure test to check for refrigerant leaks",
+        "Refrigerant recovery and system evacuation as appropriate",
+        "Correct R134a refrigerant recharge",
+        "Refrigerant oil as required",
+        "Fluorescent leak detection dye when required",
+        "Final air conditioning cooling performance check"
+      ],
+      vehicles: [
+        "Passenger vehicles",
+        "4WDs",
+        "Vans and utes",
+        "Light commercial vehicles"
+      ],
+      faqs: [
+        { question: "How much does a car aircon regas cost?", answer: "Our standard R134a car aircon regas is $239 including GST. Other refrigerant systems and any additional diagnosis or repairs are quoted separately." },
+        { question: "How do I know if my car needs a regas?", answer: "Warm or weaker airflow can be a sign. We check the system's cooling performance before servicing." },
+        { question: "What is included in the $239 aircon service?", answer: "An initial system check, nitrogen pressure and leak test, R134a recharge, refrigerant oil and fluorescent dye when required, and a final cooling check." },
+        { question: "Can ASAP diagnose other air conditioning faults?", answer: "Yes. Our separate car air conditioning service covers diagnosis and repairs for refrigeration, electrical and control-system faults." }
+      ],
+      relatedServiceSlugs: [
+        "car-air-conditioning",
+        "auto-electrical-diagnostics",
+        "battery-charging-system",
+        "lighting-repairs"
+      ],
+      primaryCtaLabel: "Book Car Aircon Service",
+      secondaryCtaLabel: "Call 03 9870 2722",
+      areaServed: "Ringwood and Melbourne eastern suburbs",
+      offerPrice: "239",
+      offerDescription: "Standard R134a car aircon regas and service with nitrogen pressure testing, refrigerant oil and fluorescent leak detection dye when required, followed by a final cooling performance check.",
+      ctaHeading: "Book Your Car Aircon Regas in Ringwood",
+      ctaDescription: "Our standard R134a aircon regas is $239 inc GST. It includes system and cooling checks, nitrogen pressure testing, refrigerant oil and fluorescent dye when required.",
+      calendlyUrl: "https://calendly.com/asapautoelectrics/auto-air-conditioning-service"
     })
   },
   {

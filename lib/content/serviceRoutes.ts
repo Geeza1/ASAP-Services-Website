@@ -45,6 +45,10 @@ export const footerServiceLinks = [
     slug: "car-air-conditioning"
   },
   {
+    title: "Car Aircon Regas & Servicing",
+    slug: "car-aircon-regas"
+  },
+  {
     title: "Electric Window Repairs",
     slug: "electric-window-repairs"
   },

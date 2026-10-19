@@ -13,6 +13,7 @@ const serviceLinks = [
   { label: "Battery & Charging Systems", href: "/services/battery-charging-system" },
   { label: "Brake Controller Installation", href: "/services/brake-controllers" },
   { label: "Car Air Conditioning", href: "/services/car-air-conditioning" },
+  { label: "Car Aircon Regas & Servicing", href: "/services/car-aircon-regas" },
   { label: "Anderson Plug Installation", href: "/services/anderson-plugs" },
   { label: "Dash Cam Installation", href: "/services/dash-cam-installation" },
   { label: "Electric Window Repairs", href: "/services/electric-window-repairs" },
@@ -47,7 +48,7 @@ export function SiteHeader() {
   <div className="mx-auto flex min-h-[92px] max-w-7xl items-center justify-between gap-2 px-4 sm:gap-4 sm:px-6 lg:px-8">
     <Link
       href="/"
-      className="relative block h-[48px] w-[250px] shrink-0 sm:h-[58px] sm:w-[400px] lg:h-[62px] lg:w-[430px]"
+      className="relative block h-[48px] w-[calc(100vw-146px)] max-w-[250px] shrink-0 sm:h-[58px] sm:w-[400px] lg:h-[62px] lg:w-[430px]"
       aria-label="ASAP Auto Electrics home"
     >
       <Image

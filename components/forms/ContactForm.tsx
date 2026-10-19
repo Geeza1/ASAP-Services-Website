@@ -8,6 +8,8 @@ type ContactFormProps = {
   serviceName?: string;
   heading?: string;
   submitLabel?: string;
+  issueLabel?: string;
+  issuePlaceholder?: string;
   className?: string;
 };
 
@@ -28,6 +30,8 @@ export function ContactForm({
   serviceName,
   heading,
   submitLabel = "Contact Us",
+  issueLabel = "Vehicle or Issue",
+  issuePlaceholder = "Battery light on, vehicle will not start, alternator problem...",
   className = ""
 }: ContactFormProps) {
   const [name, setName] = useState("");
@@ -172,14 +176,14 @@ export function ContactForm({
 
       <label className="mt-4 grid gap-2 text-sm font-black">
         <span>
-          Vehicle or Issue <span className="text-asap-red" aria-label="required">*</span>
+          {issueLabel} <span className="text-asap-red" aria-label="required">*</span>
         </span>
         <textarea
           name="vehicleIssue"
           required
           maxLength={1200}
           className="min-h-28 rounded-md border border-slate-300 bg-white px-3 py-3 text-base font-normal text-slate-950"
-          placeholder="Battery light on, vehicle will not start, alternator problem..."
+          placeholder={issuePlaceholder}
           value={vehicleIssue}
           onChange={(event) => setVehicleIssue(event.target.value)}
         />
